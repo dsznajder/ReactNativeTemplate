@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabCompletion": true,
+  "editor.tabSize": 2,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.format.enable": true,
+  "npm-intellisense.importLinebreak": "",
+  "npm.packageManager": "yarn",
+  "path-autocomplete.triggerOutsideStrings": true,
+  "prettier.eslintIntegration": true,
+  "prettier.printWidth": 100,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "path-autocomplete.pathMappings": {
+    "src": "${workspace}/src"
+  }
+}

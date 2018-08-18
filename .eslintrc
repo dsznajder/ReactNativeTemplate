@@ -1,0 +1,82 @@
+{
+  "plugins": ["import", "react", "prettier", "react-native", "jsx-a11y"],
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-native/all",
+    "plugin:react/recommended",
+    "prettier/react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "object-curly-spacing": ["error", "always"],
+    "react/no-unused-prop-types": "error",
+    "react/prefer-stateless-function": "off",
+    "react/prop-types": "error",
+    "indent": "off",
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "semi": ["warn", "never"],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore",
+        "imports": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": false,
+        "shorthandFirst": false,
+        "ignoreCase": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "parser": "flow",
+        "printWidth": 100,
+        "singleQuote": true,
+        "semi": false,
+        "trailingComma": "all"
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": ["info", "error"]
+      }
+    ],
+    "no-debugger": "off"
+  },
+  "globals": {
+    "jasmine": true,
+    "device": true,
+    "element": true,
+    "by": true,
+    "__DEV__": true
+  }
+}

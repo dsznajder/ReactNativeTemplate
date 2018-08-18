@@ -1,0 +1,68 @@
+{
+  "name": "TemplateProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf ~/.rncache && watchman watch-del-all && yarn remove-builds",
+    "generate-apk": "cd android && ./gradlew assembleRelease",
+    "lint": "eslint ./ --ext .js",
+    "remove-builds": "rm -rf ios/build android/build android/app/build",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest -u",
+    "test:ci": "jest --coverage --runInBand --detectOpenHandles",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "lodash": "4.17.10",
+    "prop-types": "15.6.2",
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-navigation": "2.11.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-rc.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "8.2.6",
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^5",
+    "eslint": "5.4.0",
+    "eslint-config-prettier": "3.0.1",
+    "eslint-plugin-flowtype": "2.50.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-react": "7.11.1",
+    "eslint-plugin-react-native": "3.2.1",
+    "husky": "1.0.0-rc.13",
+    "jest": "23.5.0",
+    "lint-staged": "7.2.2",
+    "prettier": "1.14.2",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ],
+    "testPathIgnorePatterns": [
+      "e2e",
+      "node_modules"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
+  }
+}
