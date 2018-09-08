@@ -13,6 +13,6 @@
   - ios/TemplateProject.xcodeproj
   - ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme
 - CMD + Shift + F: Change `TemplateProject` to <ProjectName>
-- `yarn install`
+- `yarn bootstrap`
 
 And project is ready :)
