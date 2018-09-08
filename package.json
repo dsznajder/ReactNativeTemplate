@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "bootstrap": "./scripts/bootstrap.sh",
     "clean": "rm -rf ~/.rncache && watchman watch-del-all && yarn remove-builds",
     "generate-apk": "cd android && ./gradlew assembleRelease",
     "lint": "eslint ./ --ext .js",
