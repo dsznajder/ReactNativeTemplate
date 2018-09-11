@@ -1,8 +1,17 @@
 {
-  "plugins": ["import", "react", "prettier", "react-native", "jsx-a11y"],
+  "plugins": [
+    "import",
+    "jest",
+    "jsx-a11y",
+    "prettier",
+    "react",
+    "react-native",
+    "sort-imports-es6-autofix"
+  ],
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
+    "plugin:jest/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react-native/all",
     "plugin:react/recommended",
@@ -19,14 +28,34 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "indent": "off",
+    "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
     "linebreak-style": ["error", "unix"],
+    "no-debugger": "off",
     "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
     "react/no-unused-prop-types": "error",
     "react/prefer-stateless-function": "off",
     "react/prop-types": "error",
-    "indent": "off",
-    "quotes": ["error", "single", { "avoidEscape": true }],
     "semi": ["warn", "never"],
+    "import/no-duplicates": ["error", "always"],
+    "import/first": ["error", "always"],
+    "import/no-unresolved": ["error", { "caseSensitive": true, "ignore": ["^src"] }],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+        "groups": ["builtin", "external", "internal", "parent", "index", "sibling"]
+      }
+    ],
+    "sort-imports-es6-autofix/sort-imports-es6": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+      }
+    ],
     "no-unused-vars": [
       "error",
       {
@@ -69,8 +98,7 @@
       {
         "allow": ["info", "error"]
       }
-    ],
-    "no-debugger": "off"
+    ]
   },
   "globals": {
     "jasmine": true,
