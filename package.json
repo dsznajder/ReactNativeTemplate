@@ -17,7 +17,7 @@
     "lodash": "4.17.10",
     "prop-types": "15.6.2",
     "react": "16.4.1",
-    "react-native": "0.56.0",
+    "react-native": "0.56.1",
     "react-native-vector-icons": "5.0.0",
     "react-navigation": "2.13.0"
   },
@@ -25,18 +25,21 @@
     "@babel/core": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
-    "babel-jest": "23.4.2",
+    "babel-jest": "23.6.0",
+    "babel-plugin-lodash": "3.3.4",
     "babel-preset-react-native": "^5",
-    "eslint": "5.4.0",
+    "eslint": "5.5.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-plugin-flowtype": "2.50.0",
     "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jest": "21.22.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-react": "7.11.1",
-    "eslint-plugin-react-native": "3.2.1",
+    "eslint-plugin-react-native": "3.3.0",
+    "eslint-plugin-sort-imports-es6-autofix": "0.3.0",
     "husky": "1.0.0-rc.13",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "lint-staged": "7.2.2",
     "prettier": "1.14.2",
     "react-test-renderer": "16.4.1"
@@ -44,7 +47,6 @@
   "jest": {
     "preset": "react-native",
     "testEnvironment": "node",
-    "testURL": "http://localhost",
     "setupFiles": [
       "<rootDir>/jest/setup.js"
     ],
@@ -52,9 +54,12 @@
       "node_modules/(?!(jest-)?react-native|react-navigation)"
     ],
     "testPathIgnorePatterns": [
-      "e2e",
+      "__e2e__",
       "node_modules"
-    ]
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   },
   "husky": {
     "hooks": {

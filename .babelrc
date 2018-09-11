@@ -1,4 +1,5 @@
 {
+  "plugins": ["lodash"],
   "presets": ["react-native"],
   "retainLines": true
 }
