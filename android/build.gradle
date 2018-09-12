@@ -1,4 +1,11 @@
 buildscript {
+    ext {
+        buildToolsVersion = "27.0.3"
+        minSdkVersion = 16
+        compileSdkVersion = 27
+        targetSdkVersion = 26
+        supportLibVersion = "27.1.1"
+    }
     repositories {
         jcenter()
         maven {
@@ -8,7 +15,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.1.4'
     }
 }
 
@@ -26,9 +33,7 @@ allprojects {
     }
 }
 
-ext {
-    minSdkVersion = 16
-    compileSdkVersion = 27
-    targetSdkVersion = 26
-    supportLibVersion = "27+"
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.10'
+    distributionUrl = distributionUrl.replace("bin", "all")
 }
