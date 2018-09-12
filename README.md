@@ -12,6 +12,8 @@
   - ios/TemplateProject
   - ios/TemplateProject.xcodeproj
   - ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme
+- Change `com.templateproject` to `com.<projectname>`
+- Change folder `android/app/src/main/java/com/templateproject` to `android/app/src/main/java/com/<projectname>`
 - CMD + Shift + F: Change `TemplateProject` to <ProjectName>
 - `yarn bootstrap`
 
