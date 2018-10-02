@@ -27,6 +27,12 @@
     "sourceType": "module",
     "ecmaVersion": 2018
   },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.5.0"
+    }
+  },
   "rules": {
     "indent": "off",
     "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
@@ -101,10 +107,6 @@
     ]
   },
   "globals": {
-    "jasmine": true,
-    "device": true,
-    "element": true,
-    "by": true,
     "__DEV__": true
   }
 }
