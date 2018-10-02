@@ -18,3 +18,10 @@
 - `yarn bootstrap`
 
 And project is ready :)
+
+TODO:
+
+- Add basic jest tests.
+- Extend `bootstrap` script.
+- Add basic Fastlane setup.
+- Setup flow.
