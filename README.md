@@ -1,5 +1,8 @@
 # TemplateProject
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dsznajder/ReactNativeTemplate.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/dsznajder/ReactNativeTemplate/tree/master.svg?style=svg)](https://circleci.com/gh/dsznajder/ReactNativeTemplate/tree/master)
+
 ## Setup
 
 [Prerequires](https://gist.github.com/dsznajder/6cc186491f53ca9b1be7eebdf68ab5c5)
