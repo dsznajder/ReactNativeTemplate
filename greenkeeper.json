@@ -3,6 +3,8 @@
     "default": {
       "packages": ["package.json", "src/package.json"]
     },
+  },
+  "greenkeeper": {
     "commitMessages": {
       "initialBadge": ":memo: Docs: Add Greenkeeper badge",
       "initialDependencies": ":gem: Upgrade: Update dependencies",
@@ -11,7 +13,7 @@
       "devDependencyUpdate": ":gem: Upgrade: Update ${dependency} to version ${version}",
       "dependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}",
       "devDependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}"
-    }
+    },
   },
   "ignore": ["react", "react-native", "react-test-renderer"]
 }
