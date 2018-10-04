@@ -15,5 +15,5 @@
       "devDependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}"
     },
   },
-  "ignore": ["react", "react-native", "react-test-renderer"]
+  "ignore": ["react", "react-test-renderer"]
 }
