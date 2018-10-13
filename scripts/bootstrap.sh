@@ -3,11 +3,10 @@
 printf -- '\n';
 
 printf 'Initializing git...';
-rm -rf .git;
+rm -rf .git .circleci greenkeeper.json LICENCE;
 printf -- '\n';
 git init;
 printf -- '\n';
-
 
 printf -- '\n';
 
