@@ -9,12 +9,11 @@
 
 - `git clone git@github.com:dsznajder/ReactNativeTemplate.git <ProjectName>`
 - `cd ProjectName`
-- `rm -rf .git && git init`
 - `code .`
 - Change folders and files in `ios` from TemplateProject to <ProjectName>:
   - ios/TemplateProject
-  - ios/TemplateProject.xcodeproj
   - ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme
+  - ios/TemplateProject.xcodeproj
 - Change `com.templateproject` to `com.<projectname>`
 - Change folder `android/app/src/main/java/com/templateproject` to `android/app/src/main/java/com/<projectname>`
 - CMD + Shift + F: Change `TemplateProject` to <ProjectName>
@@ -24,7 +23,6 @@ And project is ready :)
 
 TODO:
 
-- Add basic jest tests.
 - Extend `bootstrap` script.
 - Add basic Fastlane setup.
 - Setup flow.
