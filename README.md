@@ -26,3 +26,17 @@ TODO:
 - Extend `bootstrap` script.
 - Add basic Fastlane setup.
 - Setup flow.
+
+# Docs
+
+This repo has emoji commit specification:
+
+| Emoji    | Description                                   | Example                                   |
+| -------- | --------------------------------------------- | ----------------------------------------- |
+| :star:   | New dependency added to template              | :star: Add react-native-vector-icons      |
+| :gem:    | Dependency update                             | :gem: Update husky to version 1.1.2       |
+| :fire:   | Removed assets, dependency or file            | :fire: Remove unnecessary assets          |
+| :lock:   | Lockfile update                               | :lock: Update lockfile yarn.lock          |
+| :wrench: | Updated scripts or tooling inside Template    | :wrench: Setup CI, first test             |
+| :memo:   | Documentation / Readme update                 | :memo: Add README.md                      |
+| :bug:    | Pin dependency version because of error / bug | :bug: Lock react-native version to 0.57.2 |

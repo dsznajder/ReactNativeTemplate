@@ -77,11 +77,11 @@
   "greenkeeper": {
     "commitMessages": {
       "addConfigFile": ":paperclip: Add Greenkeeper config file",
-      "dependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}",
+      "dependencyPin": ":bug: Pin ${dependency} to ${oldVersion}",
       "dependencyUpdate": ":gem: Update ${dependency} to version ${version}",
-      "devDependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}",
+      "devDependencyPin": ":bug: Pin ${dependency} to ${oldVersion}",
       "devDependencyUpdate": ":gem: Update ${dependency} to version ${version}",
-      "initialBadge": ":memo: Docs: Add Greenkeeper badge",
+      "initialBadge": ":memo: Add Greenkeeper badge",
       "initialBranches": ":tada: Whitelist greenkeeper branches",
       "initialDependencies": ":gem: Upgrade: Update dependencies",
       "lockfileUpdate": ":lock: Lockfile ${lockfilePath}",
