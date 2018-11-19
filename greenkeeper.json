@@ -1,8 +1,14 @@
 {
   "groups": {
     "default": {
-      "packages": ["package.json", "src/package.json"]
+      "packages": [
+        "package.json",
+        "src/package.json"
+      ]
     }
   },
-  "ignore": ["react", "react-test-renderer"]
+  "ignore": [
+    "react",
+    "react-test-renderer"
+  ]
 }
