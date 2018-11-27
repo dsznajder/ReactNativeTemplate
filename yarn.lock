@@ -5073,9 +5073,9 @@ react-navigation-drawer@^1.0.1:
   dependencies:
     react-native-tab-view "^1.2.0"
 
-react-navigation-stack@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-1.0.1.tgz#988a6bfa482042e995335c29d4c272647fa9172d"
+react-navigation-stack@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-1.0.2.tgz#40ce0b7b61ce455e5ea2d071119b35ab38d75321"
 
 react-navigation-tabs@^1.0.0:
   version "1.0.0"
@@ -5086,14 +5086,14 @@ react-navigation-tabs@^1.0.0:
     react-lifecycles-compat "^3.0.4"
     react-native-tab-view "^1.0.0"
 
-react-navigation@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-3.0.0.tgz#f7ab0fbd8c633ecd92b2bab630e409fb25115b40"
+react-navigation@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-3.0.1.tgz#dfcec777981ad56f6f1573ba3a021f9d189602b3"
   dependencies:
     "@react-navigation/core" "^3.0.0"
     "@react-navigation/native" "^3.0.1"
     react-navigation-drawer "^1.0.1"
-    react-navigation-stack "^1.0.1"
+    react-navigation-stack "^1.0.2"
     react-navigation-tabs "^1.0.0"
 
 react-proxy@^1.1.7:
