@@ -23,13 +23,19 @@ And project is ready :)
 
 TODO:
 
-- Extend `bootstrap` script.
 - Add basic Fastlane setup.
 - Setup flow.
 
 # Docs
 
-This repo has emoji commit specification:
+## Dependencies included & linked:
+  - [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
+  - [react-native-screens](https://github.com/kmagiera/react-native-screens)
+  - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+  - [react-navigation](https://github.com/react-navigation/react-navigation)
+
+
+### This repo has emoji commit specification:
 
 | Emoji    | Description                                   | Example                                   |
 | -------- | --------------------------------------------- | ----------------------------------------- |
