@@ -35,6 +35,7 @@
 		E4B563AD10124EC0A1B87F6D /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 789FF15CAC1A4AE786142C10 /* Feather.ttf */; };
 		EF12A96EDE154F9881728E54 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 693D6FFCE1C2481F896A32C3 /* FontAwesome.ttf */; };
 		3661D11A26B6437D9B60AAD7 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0067135FFB8448CC967ED9D4 /* libRNGestureHandler.a */; };
+		61A914D70DD24A6AB48463D7 /* libRNScreens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F916AFACC347439F5E3C75 /* libRNScreens.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +346,8 @@
 		F8A89699BFB346FABBBE6AEC /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		9AF81748733C4CAEAEE20A2A /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		0067135FFB8448CC967ED9D4 /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		AA5EA817A41442EFBDEA8DBA /* RNScreens.xcodeproj */ = {isa = PBXFileReference; name = "RNScreens.xcodeproj"; path = "../node_modules/react-native-screens/ios/RNScreens.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B6F916AFACC347439F5E3C75 /* libRNScreens.a */ = {isa = PBXFileReference; name = "libRNScreens.a"; path = "libRNScreens.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +369,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				BC45C4E6CB304025A64E841A /* libRNVectorIcons.a in Frameworks */,
 				3661D11A26B6437D9B60AAD7 /* libRNGestureHandler.a in Frameworks */,
+				61A914D70DD24A6AB48463D7 /* libRNScreens.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +569,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				F8A89699BFB346FABBBE6AEC /* RNVectorIcons.xcodeproj */,
 				9AF81748733C4CAEAEE20A2A /* RNGestureHandler.xcodeproj */,
+				AA5EA817A41442EFBDEA8DBA /* RNScreens.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1057,11 +1062,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-screens/ios",
 				);
 				INFOPLIST_FILE = TemplateProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/TemplateProject\"",
 					"\"$(SRCROOT)/TemplateProject\"",
 					"\"$(SRCROOT)/TemplateProject\"",
 				);
@@ -1085,11 +1092,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-screens/ios",
 				);
 				INFOPLIST_FILE = TemplateProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/TemplateProject\"",
 					"\"$(SRCROOT)/TemplateProject\"",
 					"\"$(SRCROOT)/TemplateProject\"",
 				);
