@@ -3,30 +3,6 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/dsznajder/ReactNativeTemplate.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/dsznajder/ReactNativeTemplate/tree/master.svg?style=svg)](https://circleci.com/gh/dsznajder/ReactNativeTemplate/tree/master)
 
-## Setup
-
-[Prerequires](https://gist.github.com/dsznajder/6cc186491f53ca9b1be7eebdf68ab5c5)
-
-- `git clone git@github.com:dsznajder/ReactNativeTemplate.git <ProjectName>`
-- `cd ProjectName`
-- `code .`
-- Change folders and files in `ios` from TemplateProject to <ProjectName>:
-  - ios/TemplateProject
-  - ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme
-  - ios/TemplateProject.xcodeproj
-- Change `com.templateproject` to `com.<projectname>`
-- Change folder `android/app/src/main/java/com/templateproject` to `android/app/src/main/java/com/<projectname>`
-- CMD + Shift + F: Change `TemplateProject` to <ProjectName>
-- `yarn bootstrap`
-
-And project is ready :)
-
-TODO:
-
-- Add basic Fastlane setup.
-- Setup flow.
-
-# Docs
 
 ## Dependencies included & linked:
   - [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
@@ -34,6 +10,31 @@ TODO:
   - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
   - [react-navigation](https://github.com/react-navigation/react-navigation)
 
+## Setup
+
+[Prerequires](https://gist.github.com/dsznajder/6cc186491f53ca9b1be7eebdf68ab5c5)
+
+- `git clone git@github.com:dsznajder/ReactNativeTemplate.git <ProjectName>`
+- `cd <ProjectName>`
+- `code .`
+
+### IOS:
+Change folders and files in `ios` from TemplateProject to <ProjectName>:
+  - ios/TemplateProject
+  - ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme
+  - ios/TemplateProject.xcodeproj
+
+### Android:
+- Change `com.dsznajder.templateproject` to `com.<author>.<projectname>`
+- Change folder `android/app/src/main/java/com/dsznajder/templateproject` to `android/app/src/main/java/com/<author>/<projectname>`
+
+### Next Steps:
+- CMD + Shift + F: Change `TemplateProject` to <ProjectName>
+- `yarn bootstrap`
+
+And project is ready :)
+
+# Docs
 
 ### This repo has emoji commit specification:
 

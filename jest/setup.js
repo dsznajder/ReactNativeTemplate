@@ -26,3 +26,21 @@ jest.mock('Animated', () => ({
   parallel: jest.fn(() => animationObject),
   timing: jest.fn(() => animationObject),
 }))
+
+jest.mock('NativeModules', () => ({
+  UIManager: {
+    RCTView: () => {},
+  },
+  PlatformConstants: {
+    forceTouchAvailable: false,
+  },
+  RNGestureHandlerModule: {
+    attachGestureHandler: jest.fn(),
+    createGestureHandler: jest.fn(),
+    dropGestureHandler: jest.fn(),
+    updateGestureHandler: jest.fn(),
+    Directions: {},
+    State: {},
+    directEventTypes: {},
+  },
+}))

@@ -1,4 +1,4 @@
-package com.templateproject;
+package com.dsznajder.templateproject;
 
 import android.os.Bundle;
 import com.facebook.react.ReactFragmentActivity;
