@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation'
+import { createAppContainer, createStackNavigator } from 'react-navigation'
 import { useScreens } from 'react-native-screens'
 
 import Main from 'src/scenes/Main'
@@ -10,4 +10,6 @@ const Scenes = {
 
 const config = {}
 
-export default createStackNavigator(Scenes, config)
+const Navigator = createStackNavigator(Scenes, config)
+
+export default createAppContainer(Navigator)
