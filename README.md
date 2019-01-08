@@ -18,15 +18,8 @@
 - `cd <ProjectName>`
 - `code .`
 
-### IOS:
-Change folders and files in `ios` from TemplateProject to <ProjectName>:
-  - ios/TemplateProject
-  - ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme
-  - ios/TemplateProject.xcodeproj
-
 ### Android:
 - Change `com.dsznajder.templateproject` to `com.<author>.<projectname>`
-- Change folder `android/app/src/main/java/com/dsznajder/templateproject` to `android/app/src/main/java/com/<author>/<projectname>`
 
 ### Next Steps:
 - CMD + Shift + F: Change `TemplateProject` to <ProjectName>
