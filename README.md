@@ -6,6 +6,7 @@
 
 ## Dependencies included & linked:
   - [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
+  - [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated)
   - [react-native-screens](https://github.com/kmagiera/react-native-screens)
   - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
   - [react-navigation](https://github.com/react-navigation/react-navigation)
