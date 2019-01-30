@@ -30,10 +30,18 @@
   "settings": {
     "react": {
       "pragma": "React",
-      "version": "16.5.0"
+      "version": "16.6.0"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".android.js", ".ios.js"]
+      }
     }
   },
   "rules": {
+    "import/first": ["error", "always"],
+    "import/no-duplicates": ["error", "always"],
+    "import/no-unresolved": ["error", { "caseSensitive": true, "ignore": ["^src"] }],
     "indent": "off",
     "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
     "linebreak-style": ["error", "unix"],
@@ -44,9 +52,6 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "error",
     "semi": ["warn", "never"],
-    "import/no-duplicates": ["error", "always"],
-    "import/first": ["error", "always"],
-    "import/no-unresolved": ["error", { "caseSensitive": true, "ignore": ["^src"] }],
     "import/order": [
       "error",
       {
@@ -87,6 +92,23 @@
         "ignoreCase": true
       }
     ],
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "static-methods",
+          "constructor",
+          "state",
+          "instance-variables",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ],
+        "groups": {
+          "rendering": ["/^render.+$/", "render"]
+        }
+      }
+    ],
     "prettier/prettier": [
       "error",
       {
@@ -102,7 +124,7 @@
     "no-console": [
       "error",
       {
-        "allow": ["info", "error"]
+        "allow": ["info", "warn"]
       }
     ]
   },

@@ -1,4 +1,9 @@
 global.window = {}
+global.navigator = {
+  geolocation: {
+    getCurrentPosition: jest.fn(),
+  },
+}
 
 const animationObject = {
   interpolate: jest.fn(),
@@ -33,14 +38,5 @@ jest.mock('NativeModules', () => ({
   },
   PlatformConstants: {
     forceTouchAvailable: false,
-  },
-  RNGestureHandlerModule: {
-    attachGestureHandler: jest.fn(),
-    createGestureHandler: jest.fn(),
-    dropGestureHandler: jest.fn(),
-    updateGestureHandler: jest.fn(),
-    Directions: {},
-    State: {},
-    directEventTypes: {},
   },
 }))
