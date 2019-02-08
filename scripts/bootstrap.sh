@@ -22,14 +22,16 @@ mv ios/TemplateProject ios/$projectName
 
 # # TODO: Change TemplateProject to ProjectName
 
-printf -- '\n';
-printf 'Initializing git...';
+echo '\n';
+echo 'Initializing git...';
 rm -rf .git .circleci greenkeeper.json LICENCE;
 git init;
-printf -- '\n';
+echo '\n';
 
 _=$(command -v yarn);
 if [ "$?" != "0" ]; then
   npm install;
 fi;
 yarn install;
+
+rm -rf ./scripts

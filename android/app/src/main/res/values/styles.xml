@@ -2,7 +2,12 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/white</item>
+        <!-- https://github.com/facebook/react-native/issues/17530#issuecomment-416367184 -->
+        <item name="android:editTextBackground">@android:color/transparent</item>
     </style>
 
+    <style name="AppEditTextStyle" parent="@style/Widget.AppCompat.EditText">
+      <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>
