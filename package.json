@@ -25,7 +25,7 @@
     "react-native-reanimated": "1.0.0-alpha.12",
     "react-native-screens": "1.0.0-alpha.22",
     "react-native-vector-icons": "6.2.0",
-    "react-navigation": "3.1.5"
+    "react-navigation": "3.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
