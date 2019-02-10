@@ -1,40 +1,58 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
-import { black, white } from 'src/styles/colors'
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-})
+import Button from 'src/components/Button'
+import Input from 'src/components/Input'
+import { primary } from 'src/styles/colors'
 
 export default class App extends Component {
+  state = {}
+
+  _handleButtonPress = () => {
+    this.setState(prevState => ({ error: prevState.error ? '' : 'This is errorMessage' }))
+  }
+
+  _handleChangeText = key => value => this.setState({ [key]: value })
+
   render() {
+    const { error, first, second } = this.state
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View>
+        <ScrollView contentContainerStyle={styles.container}>
+          <Input label="Text" onChangeText={this._handleChangeText('first')} value={first} />
+          <Input
+            error={error}
+            label="Text with possible error"
+            onChangeText={this._handleChangeText('second')}
+            value={second}
+          />
+
+          <Button color={primary} onPress={this._handleButtonPress} style={styles.button}>
+            <Text>Make Error</Text>
+          </Button>
+
+          <Text style={styles.placeholder}>Test</Text>
+          <Text style={styles.placeholder}>Test</Text>
+          <Text style={styles.placeholder}>Test</Text>
+          <Text style={styles.placeholder}>Test</Text>
+        </ScrollView>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: primary,
+    borderRadius: 30,
+    padding: 15,
+  },
   container: {
     alignItems: 'center',
-    backgroundColor: white,
-    flex: 1,
     justifyContent: 'center',
   },
-  instructions: {
-    color: black,
-    marginBottom: 5,
-    textAlign: 'center',
-  },
-  welcome: {
-    fontSize: 20,
-    margin: 10,
-    textAlign: 'center',
+  placeholder: {
+    height: 100,
   },
 })
