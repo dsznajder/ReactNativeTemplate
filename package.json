@@ -19,7 +19,7 @@
   "dependencies": {
     "color": "3.1.0",
     "lodash": "4.17.11",
-    "prop-types": "15.6.2",
+    "prop-types": "15.7.0",
     "react": "16.6.3",
     "react-native": "0.58.4",
     "react-native-gesture-handler": "1.0.15",
