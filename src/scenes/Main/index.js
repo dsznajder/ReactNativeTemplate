@@ -22,19 +22,19 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: white,
+    flex: 1,
+    justifyContent: 'center',
+  },
+  instructions: {
+    color: black,
+    marginBottom: 5,
+    textAlign: 'center',
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
     textAlign: 'center',
-    color: black,
-    marginBottom: 5,
   },
 })

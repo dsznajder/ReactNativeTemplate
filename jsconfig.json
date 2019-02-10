@@ -3,6 +3,7 @@
     "baseUrl": "./",
     "diagnostics": true,
     "jsx": "react-native",
+    "module": "commonjs",
     "noLib": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

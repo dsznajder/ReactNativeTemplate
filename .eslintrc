@@ -103,10 +103,7 @@
           "lifecycle",
           "everything-else",
           "render"
-        ],
-        "groups": {
-          "rendering": ["/^render.+$/", "render"]
-        }
+        ]
       }
     ],
     "prettier/prettier": [
