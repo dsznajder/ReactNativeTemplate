@@ -7,7 +7,7 @@ import { StyleSheet, TextInput, View } from 'react-native'
 import { black, darkRed, fontColor, primary, white } from 'src/styles/colors'
 import { timingAnimationConfig } from 'src/helpers/timingAnimationConfig'
 
-const { timing, interpolate, Value } = {}
+const { timing, interpolate, Value } = Animated
 
 export class Input extends PureComponent {
   static propTypes = {
