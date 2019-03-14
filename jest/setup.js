@@ -7,7 +7,8 @@ global.navigator = {
 
 jest.mock('NativeModules', () => ({
   UIManager: {
-    RCTView: () => {},
+    setJSResponder: jest.fn(),
+    clearJSResponder: jest.fn(),
   },
   PlatformConstants: {
     forceTouchAvailable: false,

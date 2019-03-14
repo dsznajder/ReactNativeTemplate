@@ -1,9 +1,9 @@
 buildscript {
     ext {
-        buildToolsVersion = "28.0.2"
+        buildToolsVersion = "28.0.3"
         minSdkVersion = 16
         compileSdkVersion = 28
-        targetSdkVersion = 27
+        targetSdkVersion = 28
         supportLibVersion = "28.0.0"
     }
 
@@ -16,7 +16,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.3.1'
     }
 }
 
@@ -36,13 +36,8 @@ subprojects {
         if (project.hasProperty("android")) {
             android {
                 compileSdkVersion 28
-                buildToolsVersion "28.0.2"
+                buildToolsVersion "28.0.3"
             }
         }
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.10'
-    distributionUrl = distributionUrl.replace("bin", "all")
 }
