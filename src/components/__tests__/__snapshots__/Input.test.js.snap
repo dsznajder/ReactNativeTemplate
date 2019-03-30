@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> render 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderColor": "#000000",
+        "borderRadius": 10,
+        "borderWidth": 1,
+        "marginBottom": 20,
+        "marginTop": 10,
+        "width": "95%",
+      },
+      Object {
+        "borderColor": "rgb(82, 82, 82)",
+      },
+    ]
+  }
+>
+  <Text
+    collapsable={false}
+    pointerEvents="none"
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "color": "rgb(82, 82, 82)",
+        "position": "absolute",
+      }
+    }
+  >
+    Input label
+  </Text>
+  <Text
+    collapsable={false}
+    pointerEvents="none"
+    style={
+      Object {
+        "color": "rgb(82, 82, 82)",
+        "position": "absolute",
+      }
+    }
+  />
+  <TextInput
+    allowFontScaling={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "height": 48,
+        "paddingHorizontal": 12,
+        "width": "100%",
+        "zIndex": 1,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
