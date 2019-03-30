@@ -3,13 +3,15 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/dsznajder/ReactNativeTemplate.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/dsznajder/ReactNativeTemplate/tree/master.svg?style=svg)](https://circleci.com/gh/dsznajder/ReactNativeTemplate/tree/master)
 
+[![codecov](https://codecov.io/gh/dsznajder/ReactNativeTemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/dsznajder/ReactNativeTemplate)
 
 ## Dependencies included & linked:
-  - [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
-  - [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated)
-  - [react-native-screens](https://github.com/kmagiera/react-native-screens)
-  - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
-  - [react-navigation](https://github.com/react-navigation/react-navigation)
+
+- [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
+- [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated)
+- [react-native-screens](https://github.com/kmagiera/react-native-screens)
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+- [react-navigation](https://github.com/react-navigation/react-navigation)
 
 ## Setup
 
@@ -20,9 +22,11 @@
 - `code .`
 
 ### Android:
+
 - Change `com.dsznajder.templateproject` to `com.<author>.<projectname>`
 
 ### Next Steps:
+
 - CMD + Shift + F: Change `TemplateProject` to <ProjectName>
 - `yarn bootstrap`
 
