@@ -1,27 +1,36 @@
+// @flow
+
+import * as React from 'react'
 import Animated from 'react-native-reanimated'
-import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
 import colorPackage from 'color'
 import { StyleSheet, TextInput, View } from 'react-native'
 
 import { black, darkRed, fontColor, primary, white } from 'src/styles/colors'
-import { timingAnimationConfig } from 'src/helpers/timingAnimationConfig'
+import { timingAnimationConfig } from 'src/helpers/animationConfigs'
 
 const { timing, interpolate, Value } = Animated
 
-export class Input extends PureComponent {
-  static propTypes = {
-    label: PropTypes.string.isRequired,
-    error: PropTypes.string,
-  }
+type Props = {
+  label: string,
+  error?: string,
+}
 
+type State = {
+  focused: boolean,
+}
+
+type RefObject<T> = {
+  current: T,
+}
+
+export class Input extends React.PureComponent<Props, State> {
   state = {
     focused: false,
   }
 
   _focused = new Value(0)
   _error = new Value(0)
-  _textInputRef = React.createRef()
+  _textInputRef: RefObject<TextInput> = React.createRef()
 
   componentDidUpdate = () => {
     const newErrorValue = Number(!!this.props.error)
@@ -44,7 +53,7 @@ export class Input extends PureComponent {
 
   render() {
     const { label, error, ...restProps } = this.props
-    const color = error
+    const color: string = error
       ? darkRed
       : this.state.focused
       ? primary
@@ -125,7 +134,7 @@ export class Input extends PureComponent {
 
 export default Input
 
-const styles = StyleSheet.create({
+const styles: StyleSheet.Styles = StyleSheet.create({
   container: {
     borderColor: black,
     borderRadius: 10,
