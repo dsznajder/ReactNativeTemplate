@@ -8,13 +8,14 @@ describe('<Button />', () => {
   const defaultProps = {
     onPress: jest.fn(),
   }
-  const wrapper = renderer.create(
-    <Button {...defaultProps}>
-      <Text>Button</Text>
-    </Button>,
-  )
 
   test('render', () => {
+    const wrapper = renderer.create(
+      <Button {...defaultProps}>
+        <Text>Button</Text>
+      </Button>,
+    )
+
     expect(wrapper).toMatchSnapshot()
   })
 })

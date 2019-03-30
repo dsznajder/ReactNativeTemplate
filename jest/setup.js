@@ -5,6 +5,8 @@ global.navigator = {
   },
 }
 
+jest.mock('NativeEventEmitter')
+
 jest.mock('NativeModules', () => ({
   UIManager: {
     setJSResponder: jest.fn(),
