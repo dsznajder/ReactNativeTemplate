@@ -30,7 +30,7 @@
     "react-navigation": "3.6.1"
   },
   "devDependencies": {
-    "@babel/core": "7.4.0",
+    "@babel/core": "7.4.3",
     "@babel/runtime": "7.4.2",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.5.0",
