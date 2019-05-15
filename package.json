@@ -47,7 +47,7 @@
     "flow-bin": "0.98.1",
     "husky": "2.3.0",
     "jest": "24.7.1",
-    "lint-staged": "8.1.6",
+    "lint-staged": "8.1.7",
     "metro-react-native-babel-preset": "0.54.1",
     "prettier": "1.17.1",
     "react-test-renderer": "16.8.3"
