@@ -49,7 +49,7 @@
     "jest": "24.7.1",
     "lint-staged": "8.2.0",
     "metro-react-native-babel-preset": "0.54.1",
-    "prettier": "1.17.1",
+    "prettier": "1.18.0",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
