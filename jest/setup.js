@@ -1,11 +1,4 @@
 global.window = {}
-global.navigator = {
-  geolocation: {
-    getCurrentPosition: jest.fn(),
-  },
-}
-
-jest.mock('NativeEventEmitter')
 
 jest.mock('NativeModules', () => ({
   UIManager: {
