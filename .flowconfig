@@ -17,10 +17,10 @@
 ; Ignore duplicate module providers
 ; For RN Apps installed via npm, "Libraries" folder is inside
 ; "node_modules/react-native" but in the source repo it is in the root
-.*/Libraries/react-native/React.js
+node_modules/react-native/Libraries/react-native/React.js
 
 ; Ignore polyfills
-.*/Libraries/polyfills/.*
+node_modules/react-native/Libraries/polyfills/.*
 
 ; These should not be required directly
 ; require from fbjs/lib instead: require('fbjs/lib/warning')
@@ -46,6 +46,11 @@ emoji=true
 
 esproposal.optional_chaining=enable
 esproposal.nullish_coalescing=enable
+
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.ios.js
+module.file_ext=.android.js
 
 module.system=haste
 module.system.haste.use_name_reducers=true
@@ -102,4 +107,4 @@ untyped-import
 untyped-type-import
 
 [version]
-^0.95.0
+^0.100.0
