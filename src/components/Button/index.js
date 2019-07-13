@@ -3,7 +3,7 @@
 import * as React from 'react'
 import colorPackage from 'color'
 import { BaseButton } from 'react-native-gesture-handler'
-import { Platform, StyleSheet, TouchableHighlight } from 'react-native'
+import { Platform, StyleSheet, TouchableHighlight, ViewStyle } from 'react-native'
 
 import { fontColor } from 'src/styles/colors'
 
@@ -16,8 +16,8 @@ type Props = {
   children: React.Node,
   color?: string,
   disabled?: boolean,
-  onPress: Function,
-  style?: StyleSheet.Styles,
+  onPress: T => void,
+  style: StyleSheet.NamedStyles<ViewStyle>,
 }
 
 export default class Button extends React.Component<Props> {

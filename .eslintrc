@@ -1,8 +1,8 @@
 {
   "plugins": [
+    "flowtype",
     "import",
     "jest",
-    "jsx-a11y",
     "prettier",
     "react",
     "react-native",
@@ -10,11 +10,11 @@
   ],
   "parser": "babel-eslint",
   "extends": [
-    "eslint:recommended",
     "plugin:jest/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:react-native/all",
     "plugin:react/recommended",
+    "prettier",
+    "prettier/flowtype",
     "prettier/react"
   ],
   "env": {
@@ -30,35 +30,36 @@
   "settings": {
     "react": {
       "pragma": "React",
-      "version": "detect"
+      "version": "16.6.0"
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".android.js", ".ios.js"]
+        "extensions": [".js", ".android.js", ".ios.js", ".native.js"]
       }
     }
   },
   "rules": {
+    "flowtype/boolean-style": [2, "boolean"],
+    "flowtype/define-flow-type": 2,
+    "flowtype/newline-after-flow-annotation": [2, "always"],
+    "flowtype/no-dupe-keys": 2,
+    "flowtype/use-flow-type": 2,
     "import/first": ["error", "always"],
     "import/no-duplicates": ["error", "always"],
     "import/no-unresolved": ["error", { "caseSensitive": true, "ignore": ["^src"] }],
-    "indent": "off",
     "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
     "linebreak-style": ["error", "unix"],
     "no-debugger": "off",
+    "no-undef": 2,
+    "no-unused-vars": 2,
     "object-curly-spacing": ["error", "always"],
     "quotes": ["error", "single", { "avoidEscape": true }],
-    "react/no-unused-prop-types": "error",
+    "react/jsx-no-literals": "error",
+    "react/no-unused-prop-types": 2,
+    "react/no-unused-state": 2,
     "react/prefer-stateless-function": "off",
     "react/prop-types": "error",
     "semi": ["warn", "never"],
-    "import/order": [
-      "error",
-      {
-        "newlines-between": "always-and-inside-groups",
-        "groups": ["builtin", "external", "internal", "parent", "index", "sibling"]
-      }
-    ],
     "sort-imports-es6-autofix/sort-imports-es6": [
       "error",
       {
@@ -67,11 +68,11 @@
         "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
       }
     ],
-    "no-unused-vars": [
+    "import/order": [
       "error",
       {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_"
+        "newlines-between": "always-and-inside-groups",
+        "groups": ["builtin", "external", "internal", "parent", "index", "sibling"]
       }
     ],
     "comma-dangle": [
@@ -96,14 +97,17 @@
       2,
       {
         "order": [
-          "static-methods",
           "constructor",
+          "static-methods",
           "state",
           "instance-variables",
           "lifecycle",
           "everything-else",
           "render"
-        ]
+        ],
+        "groups": {
+          "rendering": ["/^render.+$/", "render"]
+        }
       }
     ],
     "prettier/prettier": [
@@ -118,12 +122,15 @@
         "trailingComma": "all"
       }
     ],
-    "no-console": [
-      "error",
+    "flowtype/sort-keys": [
+      2,
+      "asc",
       {
-        "allow": ["info", "warn"]
+        "caseSensitive": true,
+        "natural": false
       }
-    ]
+    ],
+    "flowtype/no-weak-types": 2
   },
   "globals": {
     "__DEV__": true

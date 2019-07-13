@@ -17,10 +17,10 @@
 ; Ignore duplicate module providers
 ; For RN Apps installed via npm, "Libraries" folder is inside
 ; "node_modules/react-native" but in the source repo it is in the root
-node_modules/react-native/Libraries/react-native/React.js
+.*/Libraries/react-native/React.js
 
 ; Ignore polyfills
-node_modules/react-native/Libraries/polyfills/.*
+.*/Libraries/polyfills/.*
 
 ; These should not be required directly
 ; require from fbjs/lib instead: require('fbjs/lib/warning')
@@ -29,17 +29,15 @@ node_modules/react-native/Libraries/polyfills/.*
 ; Flow doesn't support platforms
 .*/Libraries/Utilities/HMRLoadingView.js
 
-.*/__tests__/.*
-
 [untyped]
 .*/node_modules/@react-native-community/cli/.*/.*
+.*/__tests__/.*
 
 [include]
 
 [libs]
 node_modules/react-native/Libraries/react-native/react-native-interface.js
-node_modules/react-native/flow
-flow/
+node_modules/react-native/flow/
 
 [options]
 emoji=true
@@ -50,11 +48,13 @@ esproposal.nullish_coalescing=enable
 module.file_ext=.js
 module.file_ext=.json
 module.file_ext=.ios.js
-module.file_ext=.android.js
+module.file_ext=.native.js
+
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
 
 module.system=haste
 module.system.haste.use_name_reducers=true
-# keep the following in sync with server/haste/hasteImpl.js
 # get basename
 module.system.haste.name_reducers='^.*/\([a-zA-Z0-9$_.-]+\.js\(\.flow\)?\)$' -> '\1'
 # strip .js or .js.flow suffix
@@ -65,11 +65,11 @@ module.system.haste.name_reducers='^\(.*\)\.android$' -> '\1'
 module.system.haste.name_reducers='^\(.*\)\.native$' -> '\1'
 module.system.haste.paths.blacklist=.*/__tests__/.*
 module.system.haste.paths.blacklist=.*/__mocks__/.*
-module.system.haste.paths.whitelist=<PROJECT_ROOT>/Libraries/.*
-module.system.haste.paths.whitelist=<PROJECT_ROOT>/RNTester/.*
-module.system.haste.paths.whitelist=<PROJECT_ROOT>/IntegrationTests/.*
-module.system.haste.paths.blacklist=<PROJECT_ROOT>/Libraries/react-native/react-native-implementation.js
-module.system.haste.paths.blacklist=<PROJECT_ROOT>/Libraries/Animated/src/polyfills/.*
+module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/Libraries/.*
+module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/RNTester/.*
+module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/IntegrationTests/.*
+module.system.haste.paths.blacklist=<PROJECT_ROOT>/node_modules/react-native/Libraries/react-native/react-native-implementation.js
+module.system.haste.paths.blacklist=<PROJECT_ROOT>/node_modules/react-native/Libraries/Animated/src/polyfills/.*
 
 munge_underscores=true
 
@@ -107,4 +107,4 @@ untyped-import
 untyped-type-import
 
 [version]
-^0.100.0
+^0.102.0

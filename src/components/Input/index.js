@@ -1,9 +1,9 @@
 // @flow
 
-import * as React from 'react'
 import Animated from 'react-native-reanimated'
+import React, { type ElementRef } from 'react'
 import colorPackage from 'color'
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View, ViewStyle } from 'react-native'
 
 import { black, darkRed, fontColor, primary, white } from 'src/styles/colors'
 import { timingAnimationConfig } from 'src/helpers/animationConfigs'
@@ -11,16 +11,12 @@ import { timingAnimationConfig } from 'src/helpers/animationConfigs'
 const { timing, interpolate, Value } = Animated
 
 type Props = {
-  label: string,
   error?: string,
+  label: string,
 }
 
 type State = {
   focused: boolean,
-}
-
-type RefObject<T> = {
-  current: T,
 }
 
 export class Input extends React.PureComponent<Props, State> {
@@ -30,7 +26,7 @@ export class Input extends React.PureComponent<Props, State> {
 
   _focused = new Value(0)
   _error = new Value(0)
-  _textInputRef: RefObject<TextInput> = React.createRef()
+  _textInputRef: ElementRef<TextInput> = React.createRef()
 
   componentDidUpdate = () => {
     const newErrorValue = Number(!!this.props.error)
@@ -134,7 +130,7 @@ export class Input extends React.PureComponent<Props, State> {
 
 export default Input
 
-const styles: StyleSheet.Styles = StyleSheet.create({
+const styles: StyleSheet.NamedStyles<ViewStyle> = StyleSheet.create({
   container: {
     borderColor: black,
     borderRadius: 10,

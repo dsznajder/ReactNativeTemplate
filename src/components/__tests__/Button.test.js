@@ -12,7 +12,7 @@ describe('<Button />', () => {
   test('render', () => {
     const wrapper = renderer.create(
       <Button {...defaultProps}>
-        <Text>Button</Text>
+        <Text>{'Button'}</Text>
       </Button>,
     )
 

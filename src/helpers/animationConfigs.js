@@ -2,8 +2,8 @@ import { Easing } from 'react-native-reanimated'
 
 type TimingAnimationConfig = {
   duration: number,
+  easing: Easing,
   toValue: number,
-  easing: Function,
 }
 
 export const timingAnimationConfig = (

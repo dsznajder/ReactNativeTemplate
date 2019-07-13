@@ -1,4 +1,5 @@
 platform :ios, '9.0'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'TemplateProject' do
   # Pods for TemplateProject
@@ -28,9 +29,6 @@ target 'TemplateProject' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   # Packages
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
-  pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
+  use_native_modules!
 end

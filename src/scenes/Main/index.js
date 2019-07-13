@@ -29,13 +29,13 @@ export default class App extends Component {
           />
 
           <Button color={primary} onPress={this._handleButtonPress} style={styles.button}>
-            <Text>Make Error</Text>
+            <Text>{'Make Error'}</Text>
           </Button>
 
-          <Text style={styles.placeholder}>Test</Text>
-          <Text style={styles.placeholder}>Test</Text>
-          <Text style={styles.placeholder}>Test</Text>
-          <Text style={styles.placeholder}>Test</Text>
+          <Text style={styles.placeholder}>{'Test'}</Text>
+          <Text style={styles.placeholder}>{'Test'}</Text>
+          <Text style={styles.placeholder}>{'Test'}</Text>
+          <Text style={styles.placeholder}>{'Test'}</Text>
         </ScrollView>
       </View>
     )
