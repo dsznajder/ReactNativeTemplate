@@ -29,7 +29,9 @@
 ; Flow doesn't support platforms
 .*/Libraries/Utilities/HMRLoadingView.js
 
+
 [untyped]
+.*/node_modules/react-native/Libraries/Lists/.*
 .*/node_modules/@react-native-community/cli/.*/.*
 .*/__tests__/.*
 

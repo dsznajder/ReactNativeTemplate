@@ -60,7 +60,7 @@
     "setupFiles": [
       "<rootDir>/jest/setup.js",
       "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js",
-      "<rootDir>/node_modules/react-native-reanimated/mock.js"
+      "<rootDir>/jest/__mocks__/react-native-reanimated.mock.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation)"

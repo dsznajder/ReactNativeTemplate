@@ -1,3 +1,5 @@
+// @flow
+
 global.window = {}
 
 jest.mock('NativeModules', () => ({
@@ -8,4 +10,7 @@ jest.mock('NativeModules', () => ({
   PlatformConstants: {
     forceTouchAvailable: false,
   },
+  KeyboardObserver: {},
 }))
+
+jest.mock('NativeEventEmitter')
