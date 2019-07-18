@@ -44,6 +44,13 @@
     "flowtype/newline-after-flow-annotation": [2, "always"],
     "flowtype/no-dupe-keys": 2,
     "flowtype/use-flow-type": 2,
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always",
+      {
+        "annotationStyle": "line"
+      }
+    ],
     "import/first": ["error", "always"],
     "import/no-duplicates": ["error", "always"],
     "import/no-unresolved": ["error", { "caseSensitive": true, "ignore": ["^src"] }],
