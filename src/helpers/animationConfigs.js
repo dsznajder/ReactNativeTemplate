@@ -1,3 +1,5 @@
+// @flow
+
 import { Easing } from 'react-native-reanimated'
 
 type TimingAnimationConfig = {
