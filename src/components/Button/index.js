@@ -1,9 +1,9 @@
 // @flow
 
-import * as React from 'react'
+import React, { type Node } from 'react'
 import colorPackage from 'color'
 import { BaseButton } from 'react-native-gesture-handler'
-import { Platform, StyleSheet, TouchableHighlight, ViewStyle } from 'react-native'
+import { Platform, StyleSheet, TouchableHighlight } from 'react-native'
 
 import { fontColor } from 'src/styles/colors'
 
@@ -13,11 +13,12 @@ const rippleSupported = isAndroid && Platform.Version >= ANDROID_VERSION_LOLLIPO
 const Touchable = rippleSupported ? BaseButton : TouchableHighlight
 
 type Props = {
-  children: React.Node,
+  children: Node,
   color?: string,
   disabled?: boolean,
-  onPress: T => void,
-  style: StyleSheet.NamedStyles<ViewStyle>,
+  onPress: () => void,
+  // $FlowFixMe
+  style: StyleSheet.Styles,
 }
 
 export default class Button extends React.Component<Props> {
@@ -31,6 +32,7 @@ export default class Button extends React.Component<Props> {
       .string()
 
     return (
+      // $FlowFixMe
       <Touchable
         activeOpacity={0.4}
         disabled={disabled}

@@ -1,3 +1,5 @@
+// @flow
+
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
 // eslint-disable-next-line import/no-unresolved
 import { useScreens } from 'react-native-screens'

@@ -3,7 +3,7 @@
 import Animated from 'react-native-reanimated'
 import React, { type ElementRef } from 'react'
 import colorPackage from 'color'
-import { StyleSheet, TextInput, View, ViewStyle } from 'react-native'
+import { StyleSheet, TextInput, View } from 'react-native'
 
 import { black, darkRed, fontColor, primary, white } from 'src/styles/colors'
 import { timingAnimationConfig } from 'src/helpers/animationConfigs'
@@ -26,6 +26,7 @@ export class Input extends React.PureComponent<Props, State> {
 
   _focused = new Value(0)
   _error = new Value(0)
+  // $FlowFixMe
   _textInputRef: ElementRef<TextInput> = React.createRef()
 
   componentDidUpdate = () => {
@@ -130,7 +131,7 @@ export class Input extends React.PureComponent<Props, State> {
 
 export default Input
 
-const styles: StyleSheet.NamedStyles<ViewStyle> = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     borderColor: black,
     borderRadius: 10,

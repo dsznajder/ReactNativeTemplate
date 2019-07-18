@@ -7,8 +7,18 @@ import Button from 'src/components/Button'
 import Input from 'src/components/Input'
 import { primary } from 'src/styles/colors'
 
-export default class App extends Component {
-  state = {}
+type State = {
+  error: string,
+  first: string,
+  second: string,
+}
+
+export default class App extends Component<{}, State> {
+  state = {
+    error: '',
+    first: '',
+    second: '',
+  }
 
   _handleButtonPress = () => {
     this.setState(prevState => ({ error: prevState.error ? '' : 'This is errorMessage' }))
