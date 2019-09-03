@@ -4,16 +4,17 @@
   "private": true,
   "scripts": {
     "android": "yarn react-native run-android",
-    "ios": "yarn react-native run-ios --simulator='iPhone 8'",
     "bootstrap": "./scripts/bootstrap.sh",
     "clean:all": "yarn clean:watchman && yarn clean:builds && yarn clean:cache && yarn clean:packages",
     "clean:builds": "rm -rf ios/build android/build android/app/build",
     "clean:cache": "rm -fr $TMPDIR/react-* $TMPDIR/haste-map-react-native-packager-* ~/.rncache",
+    "clean:gradle": "cd android && ./gradlew clean && cd ..",
     "clean:packages": "rm -rf node_modules && yarn install",
     "clean:watchman": "watchman watch-del-all",
     "coverage": "open coverage/lcov-report/index.html",
-    "generate-apk": "cd android && ./gradlew assembleRelease",
+    "ios": "yarn react-native run-ios --simulator='iPhone 8'",
     "lint": "flow check && eslint ./ --ext .js",
+    "postinstall": "./scripts/postinstall.sh",
     "start": "react-native start",
     "test": "jest -u",
     "test:ci": "jest --coverage --runInBand --detectOpenHandles",
@@ -49,6 +50,7 @@
     "flow-bin": "0.106.3",
     "husky": "3.0.5",
     "jest": "24.9.0",
+    "jetifier": "1.6.4",
     "lint-staged": "9.2.5",
     "metro-react-native-babel-preset": "0.56.0",
     "prettier": "1.18.2",
@@ -60,6 +62,7 @@
     "setupFiles": [
       "<rootDir>/jest/setup.js",
       "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/node_modules/react-native-reanimated/mock.js",
       "<rootDir>/jest/__mocks__/react-native-reanimated.mock.js"
     ],
     "transformIgnorePatterns": [
