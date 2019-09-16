@@ -39,7 +39,7 @@
     "babel-jest": "24.9.0",
     "babel-plugin-lodash": "3.3.4",
     "eslint": "6.4.0",
-    "eslint-config-prettier": "6.2.0",
+    "eslint-config-prettier": "6.3.0",
     "eslint-plugin-flowtype": "4.3.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.17.0",
