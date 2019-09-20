@@ -58,7 +58,7 @@ untyped-import
 untyped-type-import
 
 [version]
-^0.106.3
+^0.108.0
 
 [options]
 emoji=true
