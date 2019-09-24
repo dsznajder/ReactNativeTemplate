@@ -5979,10 +5979,10 @@ react-native@0.60.5:
     stacktrace-parser "^0.1.3"
     whatwg-fetch "^3.0.0"
 
-react-navigation@4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-4.0.7.tgz#cc7ce334fef009242494d623e50e9cf79eb63ddd"
-  integrity sha512-0tTWanq870Hyr1VGHuj98+myRHNQnKgpRgjgzhAwVuLShyPIB9OnoLGIwIcqEdxgxGo+JMFmIGg8KCr7xapfgg==
+react-navigation@4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-4.0.8.tgz#84958783ba232d2c8cb60f265c403ee50fc4f7bd"
+  integrity sha512-nwKuPQgq+Vv4on4cS4cvPzAnKf12dG53r7VoV3sQewfut4PB9ZkdWcrhK56FKiLzanhuz3mFfzJV1y466hlTlw==
   dependencies:
     "@react-navigation/core" "^3.5.1"
     "@react-navigation/native" "^3.6.2"
