@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "jsx": "react-native",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
+    "target": "esnext",
+    "paths": {
+      "~/components/*": ["src/components/*"],
+      "~/helpers/*": ["src/helpers/*"],
+      "~/locales/*": ["src/locales/*"],
+      "~/scenes/*": ["src/scenes/*"],
+      "~/services/*": ["src/services/*"],
+      "~/styles/*": ["src/styles/*"],
+      "~/types/*": ["src/types/*"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+  "compileOnSave": false
+}

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -f ./scripts/projectNameChange.sh ]; then
     ./scripts/projectNameChange.sh

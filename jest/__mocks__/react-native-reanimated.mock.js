@@ -1,6 +1,4 @@
-// @flow
-
-import { NativeModules } from 'react-native'
+import { NativeModules } from 'react-native';
 
 NativeModules.ReanimatedModule = {
   configureProps: jest.fn(),
@@ -11,11 +9,11 @@ NativeModules.ReanimatedModule = {
   dropNode: jest.fn(),
   getValue: jest.fn(),
   createAnimatedComponent: Component => Component,
-}
+};
 
 jest.mock('react-native-reanimated/src/ReanimatedEventEmitter', () => ({
   addListener: () => {},
   removeAllListeners: () => {},
-}))
+}));
 
-jest.mock('react-native-reanimated/src/core/AnimatedProps')
+jest.mock('react-native-reanimated/src/core/AnimatedProps');
