@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Type author of project included in android package (com.<author>.<projectName>)"
 read author
