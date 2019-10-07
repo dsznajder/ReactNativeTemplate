@@ -954,10 +954,10 @@
     shortid "^2.2.15"
     use-subscription "^1.1.1"
 
-"@react-navigation/native@5.0.0-alpha.10":
-  version "5.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.10.tgz#809226ea7d0726893e66a8f39056c5770e8d8c26"
-  integrity sha512-NtbPQJond1lwstm8ToUkWFCdN+aKNXxrZGBEFAnnEYj0Rx0o4SaS5qxYk3XE57O42p6kqtdCOZN3VTfsGLIxNw==
+"@react-navigation/native@5.0.0-alpha.11":
+  version "5.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.11.tgz#a74b296b75650cf9fd6c9ff50569886bdd80ccfe"
+  integrity sha512-K3A8AFuRpQsWHFtYlw34g+U4jsGk6YPoY4dMKrPO2AbCeUXKx71FK0HCRW4cM/0vwSs06LOe0aO0hprFZwdCcg==
 
 "@react-navigation/routers@^5.0.0-alpha.9":
   version "5.0.0-alpha.9"
