@@ -944,10 +944,10 @@
   dependencies:
     "@react-navigation/routers" "^5.0.0-alpha.9"
 
-"@react-navigation/core@5.0.0-alpha.13":
-  version "5.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.0.0-alpha.13.tgz#11a9b8560ed760f81700119da099aea7a4654c1a"
-  integrity sha512-HfS28VLLTI/7upiiSWOuDGcPS6AY+f7DhWX5BjY47wHzY8lHIX3XxUYl1T1++nZ60pP/C1sMGYW6lBPQkiEfCQ==
+"@react-navigation/core@5.0.0-alpha.14":
+  version "5.0.0-alpha.14"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.0.0-alpha.14.tgz#64b7f8a6e26b78fd496ff59f94a3e6ec504b9dfc"
+  integrity sha512-6Mj5vjaYcF5jaB4opj7LL2Be6xDsyI9ZYPAsudTMbZsleFtI8agHrpSq20q0fBDbahcubTgm/C6LNXyX+mcwIA==
   dependencies:
     escape-string-regexp "^2.0.0"
     query-string "^6.8.3"
