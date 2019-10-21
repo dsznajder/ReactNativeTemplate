@@ -966,10 +966,10 @@
   dependencies:
     shortid "^2.2.15"
 
-"@react-navigation/stack@5.0.0-alpha.24":
-  version "5.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.0.0-alpha.24.tgz#a7c783600b8f0f7b23986752d02fe10c928b40ac"
-  integrity sha512-L/ZwosO1KC/6dsh2wGXVjXj7XigA/tZxYRTEe+Bti6J8o8pSh4ohRQhdHvL9vNsI+26k43we4vhDmyiMxxHiSQ==
+"@react-navigation/stack@5.0.0-alpha.27":
+  version "5.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.0.0-alpha.27.tgz#2439bba3bffa1047ad908f8739c4ad80339ef722"
+  integrity sha512-pJy8Cp4nGASxAyAlIjqFDVgdEyPam7O4mJ9PvJVtBcQ5gYUSmusZ74XFpHgeIRn9cO33AKIGmjnr4K8rJ+KdDg==
   dependencies:
     "@react-navigation/routers" "^5.0.0-alpha.9"
 
