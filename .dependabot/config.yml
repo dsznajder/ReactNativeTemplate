@@ -4,7 +4,7 @@ update_configs:
     directory: '/'
     update_schedule: 'weekly'
     default_labels:
-      - 'depencencies'
+      - 'dependencies'
     ignored_updates:
       - match:
           dependency_name: 'react-native'
