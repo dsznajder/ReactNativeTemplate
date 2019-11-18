@@ -25,7 +25,7 @@
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/bottom-tabs": "5.0.0-alpha.14",
     "@react-navigation/core": "5.0.0-alpha.14",
-    "@react-navigation/native": "5.0.0-alpha.15",
+    "@react-navigation/native": "5.0.0-alpha.16",
     "@react-navigation/stack": "5.0.0-alpha.36",
     "lodash": "4.17.15",
     "react": "16.9.0",

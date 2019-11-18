@@ -977,10 +977,10 @@
     shortid "^2.2.15"
     use-subscription "^1.1.1"
 
-"@react-navigation/native@5.0.0-alpha.15":
-  version "5.0.0-alpha.15"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.15.tgz#db404654ef92471e97a0b684000b7b9e24d0818f"
-  integrity sha512-kUwYmKMA7G91fPFGn+yfNPqPAaBrVYR3J9pqMIRdJzKNZ7Wut/iUaFbjHPtXHDwOPzaFiOz0OvEfVmggbGiIYQ==
+"@react-navigation/native@5.0.0-alpha.16":
+  version "5.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.16.tgz#3b7e3649514ff2de1ce1ed8cf0723429379f4b48"
+  integrity sha512-qCAnvmwGk0T04nY6KBV2Rdb6kwVGlQuMZtxUidqrWVrGHMUtKFVF5WFcYtUAcZw1QlqWXUQSZmy+CFoxtFKjXQ==
 
 "@react-navigation/routers@^5.0.0-alpha.14", "@react-navigation/routers@^5.0.0-alpha.9":
   version "5.0.0-alpha.14"
