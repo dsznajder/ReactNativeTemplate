@@ -960,12 +960,12 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.5.tgz#25421be6cd943a4b1660b62cfbcd45be8891462c"
   integrity sha512-Lj1DzfCmW0f4HnmHtEuX8Yy2f7cnUA8r5KGGUuDDGtQt1so6QJkKeUmsnLo2zYDtsF8due6hvIL06Vdo5xxuLQ==
 
-"@react-navigation/bottom-tabs@5.0.0-alpha.14":
-  version "5.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.0.0-alpha.14.tgz#25da899de5c25bd3bce2efc15e3247ade1a38e66"
-  integrity sha512-54umJXxBb07j4BDkRGZSoeyRr9HPdZJrkyuZBP2ugxIqpcZUH7EP1syuVc072pwkNUglt8mbihVpq3Br3clpcw==
+"@react-navigation/bottom-tabs@5.0.0-alpha.22":
+  version "5.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.0.0-alpha.22.tgz#7d0f19e957dafd9c83d5a53fd1fadaee5f1fa19f"
+  integrity sha512-z4O7dqtcEKb0ywkrOfktqoggY1u8ATnGscGKu3g+sO62Ie6mUScDiBhD19tjKmJIaMaXZMiR79XvYk0gtOrQzw==
   dependencies:
-    "@react-navigation/routers" "^5.0.0-alpha.9"
+    "@react-navigation/routers" "^5.0.0-alpha.15"
 
 "@react-navigation/core@5.0.0-alpha.14":
   version "5.0.0-alpha.14"
@@ -982,10 +982,10 @@
   resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.15.tgz#db404654ef92471e97a0b684000b7b9e24d0818f"
   integrity sha512-kUwYmKMA7G91fPFGn+yfNPqPAaBrVYR3J9pqMIRdJzKNZ7Wut/iUaFbjHPtXHDwOPzaFiOz0OvEfVmggbGiIYQ==
 
-"@react-navigation/routers@^5.0.0-alpha.14", "@react-navigation/routers@^5.0.0-alpha.9":
-  version "5.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-5.0.0-alpha.14.tgz#f68970c3f46a33d1c4d32df1736993d168719b1c"
-  integrity sha512-jvxW0X5plvftdQQQq6F2nnCJTVLvHBlqlxfPgiUWdE7Zcpzc2OmlZaA6tu8AwCmY4DBkV6XynZrWeMc2POlEyg==
+"@react-navigation/routers@^5.0.0-alpha.14", "@react-navigation/routers@^5.0.0-alpha.15":
+  version "5.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-5.0.0-alpha.15.tgz#0e6b06dd1c3f65512ced5797e81a19e3a5fd734b"
+  integrity sha512-ZIBOxusqIwGxJYdfHyhgueqyWaCbPIEFAJ0AfQchogl43O/+DxgRgtyXLI1iIxN9KTRT3kOcgMdfpYa8Y8OugQ==
   dependencies:
     shortid "^2.2.15"
 
