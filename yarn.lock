@@ -982,19 +982,19 @@
   resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.15.tgz#db404654ef92471e97a0b684000b7b9e24d0818f"
   integrity sha512-kUwYmKMA7G91fPFGn+yfNPqPAaBrVYR3J9pqMIRdJzKNZ7Wut/iUaFbjHPtXHDwOPzaFiOz0OvEfVmggbGiIYQ==
 
-"@react-navigation/routers@^5.0.0-alpha.14", "@react-navigation/routers@^5.0.0-alpha.9":
-  version "5.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-5.0.0-alpha.14.tgz#f68970c3f46a33d1c4d32df1736993d168719b1c"
-  integrity sha512-jvxW0X5plvftdQQQq6F2nnCJTVLvHBlqlxfPgiUWdE7Zcpzc2OmlZaA6tu8AwCmY4DBkV6XynZrWeMc2POlEyg==
+"@react-navigation/routers@^5.0.0-alpha.15", "@react-navigation/routers@^5.0.0-alpha.9":
+  version "5.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-5.0.0-alpha.15.tgz#0e6b06dd1c3f65512ced5797e81a19e3a5fd734b"
+  integrity sha512-ZIBOxusqIwGxJYdfHyhgueqyWaCbPIEFAJ0AfQchogl43O/+DxgRgtyXLI1iIxN9KTRT3kOcgMdfpYa8Y8OugQ==
   dependencies:
     shortid "^2.2.15"
 
-"@react-navigation/stack@5.0.0-alpha.36":
-  version "5.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.0.0-alpha.36.tgz#c53fa53becf0892560e0498f709173f048230ff9"
-  integrity sha512-oLWCdhyhHnF6eRgF28sWk03WU3iER5P2Ao5eEU8ZnDaHYsLLiMIY6uKb4jH9gAPMg2uky7gxUVYkULKU1LitqQ==
+"@react-navigation/stack@5.0.0-alpha.37":
+  version "5.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.0.0-alpha.37.tgz#5736ec6275e5b862960a93537530c51d11625e7d"
+  integrity sha512-Litxebu+ZLMYIEgCdseIEqvGeIsurduCroNOzYtbZiMSSYbFp7Jyu2SvS9UF1Rhi2zs0LgYdZBgis+/AGn6zqQ==
   dependencies:
-    "@react-navigation/routers" "^5.0.0-alpha.14"
+    "@react-navigation/routers" "^5.0.0-alpha.15"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
