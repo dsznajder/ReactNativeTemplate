@@ -21,7 +21,7 @@
     "typescript": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "1.6.2",
+    "@react-native-community/async-storage": "1.6.3",
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/bottom-tabs": "5.0.0-alpha.14",
     "@react-navigation/core": "5.0.0-alpha.14",
