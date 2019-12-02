@@ -6025,10 +6025,10 @@ react-native-redash@8.5.0:
     parse-svg-path "^0.1.2"
     use-memo-one "^1.1.1"
 
-react-native-screens@2.0.0-alpha.6:
-  version "2.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.0.0-alpha.6.tgz#238cf7e97ff6008cca75dd1dd4a5a854bce81d57"
-  integrity sha512-5m59glvDDzQvzdBymIn6GfCnzk/9kaxkREEKLVMdANtZlqIuH3Jbgoc+56pcX5LVSZCMaSozPAQBcLaMWO2JUA==
+react-native-screens@2.0.0-alpha.15:
+  version "2.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.0.0-alpha.15.tgz#40ee432d5f9b6169494a8fd6997add1a8c4b41b3"
+  integrity sha512-Nn4PRFSKLkP0MTXwqOIhMypJ7GMhcU+AZgFJd0DFQhNyU5sLNlKGEzQS6jRY+4MtHJnDXoMOr/o2l9WrI/O3Mg==
   dependencies:
     debounce "^1.2.0"
 
