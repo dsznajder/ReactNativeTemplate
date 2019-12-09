@@ -52,7 +52,7 @@
     "eslint-plugin-sort-imports-es6-autofix": "0.5.0",
     "husky": "3.0.9",
     "jest": "24.9.0",
-    "jetifier": "1.6.4",
+    "jetifier": "1.6.5",
     "lint-staged": "9.4.2",
     "metro-react-native-babel-preset": "0.56.3",
     "prettier": "1.18.2",
