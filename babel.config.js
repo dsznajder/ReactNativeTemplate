@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     'lodash',
+    'transform-remove-console',
     [
       'module-resolver',
       {

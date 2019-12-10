@@ -2,13 +2,12 @@ import React from 'react';
 import { NavigationNativeContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useScreens } from 'react-native-screens';
+import { enableScreens } from 'react-native-screens';
 
 import Main from './src/scenes/Main';
 import RNDefault from './src/scenes/RNDefault';
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-useScreens();
+enableScreens();
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
