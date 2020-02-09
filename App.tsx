@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavigationNativeContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 
 import Main from './src/scenes/Main';
@@ -10,15 +10,15 @@ import RNDefault from './src/scenes/RNDefault';
 enableScreens();
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const App = () => (
-  <NavigationNativeContainer>
+  <NavigationContainer>
     <Tab.Navigator>
       <Tab.Screen name="Main">
         {() => (
           <Stack.Navigator>
-            <Stack.Screen name="Main" component={Main} />
+            <Stack.Screen component={Main} name="Main" />
           </Stack.Navigator>
         )}
       </Tab.Screen>
@@ -26,12 +26,12 @@ const App = () => (
       <Tab.Screen name="Default">
         {() => (
           <Stack.Navigator>
-            <Stack.Screen name="Default" component={RNDefault} />
+            <Stack.Screen component={RNDefault} name="Default" />
           </Stack.Navigator>
         )}
       </Tab.Screen>
     </Tab.Navigator>
-  </NavigationNativeContainer>
+  </NavigationContainer>
 );
 
 export default App;

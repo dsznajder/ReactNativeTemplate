@@ -19,9 +19,9 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.dSYM.zip
 *.xcuserstate
 project.xcworkspace
-ios/Pods/
 
 # Android/IntelliJ
 #
@@ -29,6 +29,7 @@ build/
 .idea
 .gradle
 local.properties
+!debug.keystore
 *.iml
 
 # node.js
@@ -43,16 +44,23 @@ buck-out/
 \.buckd/
 *.keystore
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
-
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
-
 # Bundle artifact
 *.jsbundle
+
+# Development
+*.env
+.env.*
+
+secrets.xml
+report.xml
+test-report.html
+
+# Sentry
+/ios/sentry.properties
+/android/sentry.properties
+
+# Crashlytics
+/ios/Pods/
+
+# Tests
+/tmp

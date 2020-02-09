@@ -23,10 +23,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    dexOptions {
+        preDexLibraries false
+        javaMaxHeapSize "8g"
+    }
+
     defaultConfig {
         applicationId "com.dsznajder.templateproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
     }
@@ -71,11 +77,22 @@ android {
             }
         }
     }
+
+    bundle {
+        language {
+            // This is because of the error: "AAB upload failed. The bundle targets unrecognized languages: fb."
+            // Some package started to cause it, so we disable APK splitting for each language
+            enableSplit false
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.yoga'

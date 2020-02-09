@@ -5,67 +5,80 @@
   "scripts": {
     "android": "yarn react-native run-android",
     "bootstrap": "./scripts/bootstrap.sh",
-    "clean:all": "yarn clean:watchman && yarn clean:builds && yarn clean:cache && yarn clean:gradle && yarn clean:packages",
+    "clean:all": "yarn clean:watchman && yarn clean:builds && yarn clean:gradlew && yarn clean:cache && yarn clean:packages",
     "clean:builds": "rm -rf ios/build android/build android/app/build",
-    "clean:cache": "rm -fr $TMPDIR/react-* $TMPDIR/haste-map-react-native-packager-* ~/.rncache; watchman watch-del-all",
-    "clean:gradle": "cd android && ./gradlew clean && cd ..",
-    "clean:packages": "rm -rf node_modules && yarn install",
+    "clean:cache": "rm -rf $TMPDIR/react-* $TMPDIR/haste-map-react-native-packager-* ~/.rncache",
+    "clean:gradlew": "cd android && ./gradlew clean && cd ..",
+    "clean:packages": "rm -rf ios/Pods && rm -rf node_modules && yarn bootstrap",
+    "clean:watchman": "watchman watch-del-all",
     "coverage": "open coverage/lcov-report/index.html",
     "ios": "yarn react-native run-ios --simulator='iPhone 11'",
-    "lint": "eslint --ext '.ts,.tsx' .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "postinstall": "./scripts/postinstall.sh",
     "start": "react-native start",
-    "test": "jest -u",
-    "test:ci": "jest --coverage --runInBand --detectOpenHandles",
+    "test": "jest --coverage --runInBand --detectOpenHandles --forceExit",
+    "test:unit": "jest -u --runInBand",
     "test:watch": "jest --watch",
     "typescript": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "1.7.0",
-    "@react-native-community/masked-view": "0.1.5",
-    "@react-navigation/bottom-tabs": "5.0.0-alpha.24",
-    "@react-navigation/core": "5.0.0-alpha.27",
-    "@react-navigation/native": "5.0.0-alpha.17",
-    "@react-navigation/stack": "5.0.0-alpha.41",
+    "@react-native-community/async-storage": "1.7.1",
+    "@react-native-community/masked-view": "0.1.6",
+    "@react-native-community/netinfo": "5.3.3",
+    "@react-native-community/status-bar": "1.0.3",
+    "@react-navigation/bottom-tabs": "5.0.0",
+    "@react-navigation/native": "5.0.0",
+    "@react-navigation/native-stack": "5.0.0",
+    "@types/i18n-js": "3.0.1",
+    "i18n-js": "3.5.1",
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-gesture-handler": "1.5.2",
-    "react-native-reanimated": "1.4.0",
-    "react-native-redash": "8.6.0",
-    "react-native-screens": "2.0.0-alpha.17",
-    "react-native-vector-icons": "6.6.0"
+    "react-native-device-info": "5.5.1",
+    "react-native-gesture-handler": "1.5.6",
+    "react-native-localize": "1.3.3",
+    "react-native-reanimated": "1.7.0",
+    "react-native-redash": "9.6.0",
+    "react-native-screens": "2.0.0-beta.2",
+    "react-native-vector-icons": "6.6.0",
+    "use-memo-one": "1.1.1"
   },
   "devDependencies": {
-    "@babel/core": "7.7.5",
-    "@babel/runtime": "7.7.6",
-    "@types/jest": "24.0.23",
+    "@babel/core": "7.8.4",
+    "@babel/runtime": "7.8.4",
+    "@types/jest": "25.1.2",
     "@types/lodash": "4.14.149",
-    "@types/react": "16.9.16",
-    "@types/react-native": "0.60.24",
-    "@types/react-test-renderer": "16.9.1",
-    "babel-jest": "24.9.0",
+    "@types/react": "16.9.19",
+    "@types/react-native": "0.61.12",
+    "@types/react-test-renderer": "16.9.2",
+    "babel-jest": "25.1.0",
     "babel-plugin-lodash": "3.3.4",
-    "babel-plugin-module-resolver": "3.2.0",
+    "babel-plugin-module-resolver": "4.0.0",
     "babel-plugin-transform-remove-console": "6.9.4",
-    "eslint": "6.7.2",
-    "eslint-config-satya164": "3.1.2",
+    "eslint": "6.8.0",
+    "eslint-config-satya164": "3.1.5",
     "eslint-plugin-sort-imports-es6-autofix": "0.5.0",
-    "husky": "3.1.0",
-    "jest": "24.9.0",
-    "lint-staged": "9.5.0",
-    "metro-react-native-babel-preset": "0.57.0",
+    "husky": "4.2.1",
+    "jest": "25.1.0",
+    "lint-staged": "10.0.7",
+    "metro-react-native-babel-preset": "0.58.0",
     "prettier": "1.19.1",
-    "react-test-renderer": "16.9.0",
-    "typescript": "3.7.3"
+    "react-test-renderer": "16.12.0",
+    "typescript": "3.7.5"
   },
   "jest": {
     "preset": "react-native",
-    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/assets/"
+    ],
     "setupFiles": [
       "<rootDir>/jest/setup.js",
       "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js",
-      "<rootDir>/node_modules/react-native-reanimated/mock.js",
-      "<rootDir>/jest/__mocks__/react-native-reanimated.mock.js"
+      "<rootDir>/jest/__mocks__/react-native-reanimated.mock.js",
+      "<rootDir>/jest/__mocks__/react-native-gesture-handler.mock.js",
+      "<rootDir>/jest/__mocks__/react-native-device-info.mock.js",
+      "<rootDir>/jest/__mocks__/react-native-localize.mock.js",
+      "<rootDir>/jest/__mocks__/react-native-netinfo.mock.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native)"
@@ -82,8 +95,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --ext ',.ts,.tsx'",
-      "git add"
+      "eslint --ext ',.ts,.tsx'"
     ]
   }
 }
