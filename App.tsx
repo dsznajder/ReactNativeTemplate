@@ -1,11 +1,23 @@
+import KeyboardManager from 'react-native-keyboard-manager';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { Platform, unstable_enableLogBox } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 
 import Main from './src/scenes/Main';
-import RNDefault from './src/scenes/RNDefault';
+
+if (Platform.OS === 'ios') {
+  KeyboardManager.setEnable(true);
+  KeyboardManager.setKeyboardDistanceFromTextField(30);
+  KeyboardManager.setPreventShowingBottomBlankSpace(true);
+}
+
+if (__DEV__) {
+  console.disableYellowBox = true;
+  unstable_enableLogBox();
+}
 
 enableScreens();
 
@@ -19,14 +31,6 @@ const App = () => (
         {() => (
           <Stack.Navigator>
             <Stack.Screen component={Main} name="Main" />
-          </Stack.Navigator>
-        )}
-      </Tab.Screen>
-
-      <Tab.Screen name="Default">
-        {() => (
-          <Stack.Navigator>
-            <Stack.Screen component={RNDefault} name="Default" />
           </Stack.Navigator>
         )}
       </Tab.Screen>

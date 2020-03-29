@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f ./scripts/project_name_change.sh ]; then
-    ./scripts/project_name_change.sh
+  ./scripts/project_name_change.sh
 fi
 
 yarn install;

@@ -35,6 +35,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-sort-props': ['error'],
     'flowtype/no-types-missing-file-annotation': 'off',
+    'react-native/no-raw-text': ['error', { skip: ['Typography'] }],
 
     'import/no-unresolved': [
       'error',
@@ -58,14 +59,28 @@ module.exports = {
 
     '@typescript-eslint/array-type': [
       'error',
+      { default: 'generic', readonly: 'generic' },
+    ],
+
+    'import/order': [
+      'error',
       {
-        default: 'generic',
-        readonly: 'generic',
+        'newlines-between': 'always-and-inside-groups',
+        groups: [
+          'internal',
+          'external',
+          'unknown',
+          'index',
+          'sibling',
+          'parent',
+          'builtin',
+        ],
+        alphabetize: { order: 'ignore' },
       },
     ],
 
     'sort-imports-es6-autofix/sort-imports-es6': [
-      'error',
+      2,
       {
         ignoreCase: false,
         ignoreMemberSort: false,

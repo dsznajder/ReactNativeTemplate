@@ -1,4 +1,5 @@
 import 'react-native-gesture-handler';
+// eslint-disable-next-line import/named
 import { AppRegistry } from 'react-native';
 
 import App from './App';

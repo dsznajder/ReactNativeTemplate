@@ -22,48 +22,60 @@
     "typescript": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "1.7.1",
-    "@react-native-community/masked-view": "0.1.6",
-    "@react-native-community/netinfo": "5.3.3",
+    "@react-native-community/async-storage": "1.8.1",
+    "@react-native-community/masked-view": "0.1.7",
+    "@react-native-community/netinfo": "5.6.2",
     "@react-native-community/status-bar": "1.0.3",
-    "@react-navigation/bottom-tabs": "5.0.0",
-    "@react-navigation/native": "5.0.0",
-    "@react-navigation/native-stack": "5.0.0",
+    "@react-navigation/bottom-tabs": "5.2.4",
+    "@react-navigation/native": "5.1.3",
+    "@react-navigation/native-stack": "5.0.5",
     "@types/i18n-js": "3.0.1",
     "i18n-js": "3.5.1",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
-    "react-native-device-info": "5.5.1",
-    "react-native-gesture-handler": "1.5.6",
-    "react-native-localize": "1.3.3",
-    "react-native-reanimated": "1.7.0",
-    "react-native-redash": "9.6.0",
-    "react-native-screens": "2.0.0-beta.2",
+    "react": "16.13.1",
+    "react-native": "0.62.0",
+    "react-native-config": "1.0.0",
+    "react-native-gesture-handler": "1.6.1",
+    "react-native-keyboard-manager": "4.0.13-16",
+    "react-native-reanimated": "1.7.1",
+    "react-native-redash": "10.0.1",
+    "react-native-screens": "2.4.0",
     "react-native-vector-icons": "6.6.0",
     "use-memo-one": "1.1.1"
   },
   "devDependencies": {
-    "@babel/core": "7.8.4",
-    "@babel/runtime": "7.8.4",
-    "@types/jest": "25.1.2",
+    "@babel/core": "7.9.0",
+    "@babel/runtime": "7.9.2",
+    "@types/jest": "25.1.4",
     "@types/lodash": "4.14.149",
-    "@types/react": "16.9.19",
-    "@types/react-native": "0.61.12",
+    "@types/react": "16.9.27",
+    "@types/react-native": "0.62.0",
     "@types/react-test-renderer": "16.9.2",
-    "babel-jest": "25.1.0",
+    "babel-jest": "25.2.3",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-module-resolver": "4.0.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "eslint": "6.8.0",
-    "eslint-config-satya164": "3.1.5",
+    "eslint-config-satya164": "3.1.6",
     "eslint-plugin-sort-imports-es6-autofix": "0.5.0",
-    "husky": "4.2.1",
-    "jest": "25.1.0",
-    "lint-staged": "10.0.7",
-    "metro-react-native-babel-preset": "0.58.0",
-    "prettier": "1.19.1",
-    "react-test-renderer": "16.12.0",
-    "typescript": "3.7.5"
+    "flipper-plugin-react-native-performance": "0.4.3",
+    "husky": "4.2.3",
+    "jest": "25.2.3",
+    "lint-staged": "10.0.10",
+    "metro-react-native-babel-preset": "0.59.0",
+    "prettier": "2.0.2",
+    "react-test-renderer": "16.13.1",
+    "typescript": "3.8.3"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "parser": "typescript",
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
   },
   "jest": {
     "preset": "react-native",
@@ -76,12 +88,10 @@
       "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js",
       "<rootDir>/jest/__mocks__/react-native-reanimated.mock.js",
       "<rootDir>/jest/__mocks__/react-native-gesture-handler.mock.js",
-      "<rootDir>/jest/__mocks__/react-native-device-info.mock.js",
-      "<rootDir>/jest/__mocks__/react-native-localize.mock.js",
-      "<rootDir>/jest/__mocks__/react-native-netinfo.mock.js"
+      "<rootDir>/jest/__mocks__/react-native-config.mock.js"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native)"
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
     ],
     "testPathIgnorePatterns": [
       "__e2e__",
@@ -95,7 +105,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --ext ',.ts,.tsx'"
+      "eslint --ext ',.ts,.tsx,.js'"
     ]
   }
 }

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { NativeModules } from 'react-native';
 
 NativeModules.RNGestureHandlerModule = {

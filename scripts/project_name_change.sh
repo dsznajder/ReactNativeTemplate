@@ -17,6 +17,7 @@ cp android/app/src/main/java/com/dsznajder/templateproject/MainApplication.java 
 mv ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/TemplateProject.xcscheme \
    ios/TemplateProject.xcodeproj/xcshareddata/xcschemes/$projectName.xcscheme
 mv ios/TemplateProject.xcodeproj ios/$projectName.xcodeproj
+mv ios/TemplateProject.xcworkspace ios/$projectName.xcworkspace
 mv ios/TemplateProject ios/$projectName
 
 if [[ "$author" != "dsznajder" ]]; then

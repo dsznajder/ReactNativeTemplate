@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { NativeModules } from 'react-native';
 
 NativeModules.ReanimatedModule = {
@@ -10,7 +11,7 @@ NativeModules.ReanimatedModule = {
   disconnectNodes: jest.fn(),
   dropNode: jest.fn(),
   getValue: jest.fn(),
-  createAnimatedComponent: Component => Component,
+  createAnimatedComponent: (Component) => Component,
   animateNextTransition: jest.fn(),
 };
 

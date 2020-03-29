@@ -1,4 +1,3 @@
-import * as RNLocalize from 'react-native-localize';
 import I18n from 'i18n-js';
 
 import en from '~/locales/en.json';
@@ -13,7 +12,7 @@ const pluralizer = (count: number): [string] => {
 };
 
 I18n.defaultLocale = 'en';
-I18n.locale = RNLocalize.getLocales()?.[0].languageCode;
+I18n.locale = 'en';
 I18n.fallbacks = true;
 I18n.translations = {
   en,
