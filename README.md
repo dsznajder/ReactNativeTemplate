@@ -25,7 +25,7 @@
 
 ### Next Steps:
 
-- CMD + Shift + F: Change `TemplateProject` to <ProjectName>
+- CMD + Shift + F: Change `TemplateProject` to `<ProjectName>`
 - `yarn bootstrap`
 
 And project is ready :)
