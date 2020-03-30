@@ -61,7 +61,7 @@
     "flipper-plugin-react-native-performance": "0.4.3",
     "husky": "4.2.3",
     "jest": "25.2.4",
-    "lint-staged": "10.0.10",
+    "lint-staged": "10.1.0",
     "metro-react-native-babel-preset": "0.59.0",
     "prettier": "2.0.2",
     "react-test-renderer": "16.11.0",
