@@ -249,6 +249,8 @@ PODS:
     - React
   - react-native-netinfo (5.6.2):
     - React
+  - react-native-safe-area-context (0.7.3):
+    - React
   - react-native-statusbar (1.0.3):
     - React
   - React-RCTActionSheet (0.62.0):
@@ -356,6 +358,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-config (from `../node_modules/react-native-config`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-statusbar (from `../node_modules/@react-native-community/status-bar`)"
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -430,6 +433,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-config"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   react-native-statusbar:
     :path: "../node_modules/@react-native-community/status-bar"
   React-RCTActionSheet:
@@ -500,6 +505,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 8e5913c4c6c54f0d3f9c9fc630c465a89cded65d
   react-native-config: 7db9b96479164dfd7b2be68eb9079e08279511c4
   react-native-netinfo: 73303369946c2487c600418961bfdc87748b832f
+  react-native-safe-area-context: e200d4433aba6b7e60b52da5f37af11f7a0b0392
   react-native-statusbar: ee9cc04cf942791e3d10597280d0e1adc876b9e5
   React-RCTActionSheet: 674afbc8b9c76e0a83520e0a51da29a70802c03f
   React-RCTAnimation: f5f24330d09ee677fb49e0782f8321868f4df431

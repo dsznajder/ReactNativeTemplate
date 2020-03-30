@@ -31,13 +31,14 @@
     "@react-navigation/native-stack": "5.0.5",
     "@types/i18n-js": "3.0.1",
     "i18n-js": "3.5.1",
-    "react": "16.13.1",
+    "react": "16.11.0",
     "react-native": "0.62.0",
     "react-native-config": "1.0.0",
     "react-native-gesture-handler": "1.6.1",
     "react-native-keyboard-manager": "4.0.13-16",
     "react-native-reanimated": "1.7.1",
     "react-native-redash": "10.0.1",
+    "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "2.4.0",
     "react-native-vector-icons": "6.6.0",
     "use-memo-one": "1.1.1"
@@ -63,7 +64,7 @@
     "lint-staged": "10.0.10",
     "metro-react-native-babel-preset": "0.59.0",
     "prettier": "2.0.2",
-    "react-test-renderer": "16.13.1",
+    "react-test-renderer": "16.11.0",
     "typescript": "3.8.3"
   },
   "prettier": {
