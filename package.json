@@ -19,7 +19,9 @@
     "test": "jest --coverage --runInBand --detectOpenHandles --forceExit",
     "test:unit": "jest -u --runInBand",
     "test:watch": "jest --watch",
-    "typescript": "tsc --noEmit"
+    "typescript": "tsc --noEmit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@react-native-community/async-storage": "1.9.0",
@@ -40,7 +42,8 @@
     "react-native-redash": "10.1.1",
     "react-native-screens": "2.4.0",
     "react-native-vector-icons": "6.6.0",
-    "use-memo-one": "1.1.1"
+    "use-memo-one": "1.1.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
@@ -107,5 +110,6 @@
     "*.{ts,tsx}": [
       "eslint --ext ',.ts,.tsx,.js'"
     ]
-  }
+  },
+  "snyk": true
 }
