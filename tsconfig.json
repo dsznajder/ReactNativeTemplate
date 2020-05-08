@@ -5,7 +5,7 @@
       "~/assets/*": ["src/assets/*"],
       "~/components/*": ["src/components/*"],
       "~/config/*": ["src/config/*"],
-      "~/hooks": ["src/hooks"],
+      "~/hooks/*": ["src/hooks/*"],
       "~/helpers/*": ["src/helpers/*"],
       "~/locales/*": ["src/locales/*"],
       "~/machines/*": ["src/machines/*"],
