@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     es6: true,
@@ -7,6 +9,10 @@ module.exports = {
   },
 
   settings: {
+    'react-native/style-sheet-object-names': [
+      'StyleSheet',
+      'new DynamicStyleSheet',
+    ],
     'import/resolver': {
       node: {
         extensions: [
@@ -25,21 +31,31 @@ module.exports = {
     },
   },
 
-  plugins: ['sort-imports-es6-autofix'],
+  plugins: ['simple-import-sort', 'graphql'],
   extends: ['satya164', 'plugin:react-native/all'],
 
   rules: {
     'babel/no-unused-expressions': 'off',
+    'import/extensions': 'off',
+    'import/named': 'off',
     'jest/consistent-test-it': ['error', { fn: 'test' }],
-    'react-hooks/exhaustive-deps': 'off',
+    'jest/no-truthy-falsy': 'off',
+    'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
-    'react/jsx-sort-props': ['error'],
-    'flowtype/no-types-missing-file-annotation': 'off',
     'react-native/no-raw-text': ['error', { skip: ['Typography'] }],
+    'react/no-unused-prop-types': 'off',
 
     'import/no-unresolved': [
       'error',
-      { caseSensitive: false, ignore: ['^~/'] },
+      {
+        caseSensitive: false,
+        ignore: ['^(~|jest)/', 'react-native-reanimated'],
+      },
+    ],
+
+    'jest/expect-expect': [
+      'error',
+      { assertFunctionNames: ['expect', 'element'] },
     ],
 
     'prettier/prettier': [
@@ -62,29 +78,30 @@ module.exports = {
       { default: 'generic', readonly: 'generic' },
     ],
 
-    'import/order': [
+    'simple-import-sort/sort': [
       'error',
       {
-        'newlines-between': 'always-and-inside-groups',
         groups: [
-          'internal',
-          'external',
-          'unknown',
-          'index',
-          'sibling',
-          'parent',
-          'builtin',
+          // Side effect imports.
+          ['^\\u0000'],
+          // Packages.
+          ['^@?\\w'],
+          // Things that start with `~/`.
+          ['^~/'],
+          ['^../'],
+          ['^./'],
         ],
-        alphabetize: { order: 'ignore' },
       },
     ],
 
-    'sort-imports-es6-autofix/sort-imports-es6': [
-      2,
+    'graphql/template-strings': [
+      'error',
       {
-        ignoreCase: false,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'],
+        env: 'apollo',
+        schemaJsonFilepath: path.resolve(
+          __dirname,
+          'src/types/graphql.schema.json',
+        ),
       },
     ],
   },
