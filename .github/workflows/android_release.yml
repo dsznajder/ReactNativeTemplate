@@ -30,7 +30,7 @@ jobs:
       run: yarn
 
     - name: Build .apk
-      cd: android && ./gradlew assembleRelease
+      run: cd android && ./gradlew assembleRelease
 
     - uses: actions/upload-artifact@v2
       with:
