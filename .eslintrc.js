@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 
 module.exports = {
   env: {
@@ -78,7 +78,8 @@ module.exports = {
       { default: 'generic', readonly: 'generic' },
     ],
 
-    'simple-import-sort/sort': [
+    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': [
       'error',
       {
         groups: [
@@ -94,16 +95,16 @@ module.exports = {
       },
     ],
 
-    'graphql/template-strings': [
-      'error',
-      {
-        env: 'apollo',
-        schemaJsonFilepath: path.resolve(
-          __dirname,
-          'src/types/graphql.schema.json',
-        ),
-      },
-    ],
+    // 'graphql/template-strings': [
+    //   'error',
+    //   {
+    //     env: 'apollo',
+    //     schemaJsonFilepath: path.resolve(
+    //       __dirname,
+    //       'src/types/graphql.schema.json',
+    //     ),
+    //   },
+    // ],
   },
   globals: {
     __DEV__: true,

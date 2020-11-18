@@ -1,9 +1,9 @@
 name: Android release
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
 jobs:
   android-apk:

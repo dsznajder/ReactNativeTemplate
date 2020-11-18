@@ -1,0 +1,48 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+bump_version_map = { 'major' => 0, 'minor' => 1, 'patch' => 2 }
+
+default_platform(:android)
+
+platform :android do
+  desc 'Submit a new Release build'
+  lane :release do |options|
+    if options[:bump_type]
+      version_index_bump = bump_version_map[options[:bump_type]]
+      version_name = android_get_version_name.split('.').map(&:to_i)
+      version_name = if version_index_bump === 0
+                       "#{version_name[0] + 1}.0.0"
+                     elsif version_index_bump === 1
+                       "#{version_name[0]}.#{version_name[1] + 1}.0"
+                     else
+                       "#{version_name[0]}.#{version_name[1]}.#{version_name[2] + 1}"
+                     end
+
+      android_set_version_name(version_name: version_name)
+    end
+
+    version_code = android_get_version_code
+    android_set_version_code(version_code: version_code.to_i + 1)
+
+    gradle(task: 'bundleRelease')
+    supply(
+      mapping: './app/build/outputs/mapping/release/mapping.txt',
+      track: 'internal',
+      skip_upload_apk: true,
+      json_key: options[:json_key]
+    )
+  end
+end
