@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import ejs from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
 import yargs from 'yargs';
@@ -28,15 +29,15 @@ const args: Record<ArgName, yargs.Options> = {
 async function create(argv: yargs.Arguments<any>) {
   const folder = path.join(process.cwd(), argv.name);
 
-  if (await fs.pathExists(folder)) {
-    console.log(
-      `A folder already exists at ${chalk.gray(
-        folder,
-      )}! Please specify another folder name or delete the existing one.`,
-    );
+  // if (await fs.pathExists(folder)) {
+  //   console.log(
+  //     `A folder already exists at ${chalk.gray(
+  //       folder,
+  //     )}! Please specify another folder name or delete the existing one.`,
+  //   );
 
-    process.exit(1);
-  }
+  //   process.exit(1);
+  // }
 
   const basename = path.basename(argv.name);
 
@@ -83,6 +84,9 @@ async function create(argv: yargs.Arguments<any>) {
   } as Answers;
 
   const options = {
+    project: {
+      name: basename,
+    },
     integrations: {
       graphql: integrations.includes(Integrations.GraphQL),
       unimodules: integrations.includes(Integrations.GraphQL),
@@ -94,7 +98,32 @@ async function create(argv: yargs.Arguments<any>) {
     },
   };
 
-  await copyDir(COMMON_FILES, folder, options);
+  const copyDir = async (source: string, dest: string) => {
+    await fs.mkdirp(dest);
+
+    const files = await fs.readdir(source);
+
+    for (const f of files) {
+      const target = path.join(
+        dest,
+        ejs.render(f.replace(/^\$/, ''), options, {
+          openDelimiter: '{',
+          closeDelimiter: '}',
+        }),
+      );
+
+      const file = path.join(source, f);
+      const stats = await fs.stat(file);
+
+      if (stats.isDirectory()) {
+        await copyDir(file, target);
+      } else {
+        await fs.copyFile(file, target);
+      }
+    }
+  };
+
+  await copyDir(COMMON_FILES, folder);
 }
 
 yargs

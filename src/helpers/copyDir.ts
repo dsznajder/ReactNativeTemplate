@@ -7,7 +7,9 @@ const copyDir = async (source: string, dest: string, options: any) => {
 
   const files = await fs.readdir(source);
 
+  console.log(options);
   for (const f of files) {
+    console.log(f);
     const target = path.join(
       dest,
       ejs.render(f.replace(/^\$/, ''), options, {

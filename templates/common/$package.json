@@ -1,5 +1,5 @@
 {
-  "name": "template-project",
+  "name": "<%- project.name %>",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,8 +12,8 @@
     "clean:pods": "rm -rf ios/Pods ios/Podfile.lock",
     "clean:watchman": "watchman watch-del-all",
     "coverage": "open coverage/lcov-report/index.html",
-    "fastlane:android": "yarn jetify; cd android && bundle update && bundle exec fastlane",
-    "fastlane:ios": "cd ios && bundle update && bundle exec fastlane",
+    "fastlane:android": "yarn jetify; cd android && bundle exec fastlane; cd ..",
+    "fastlane:ios": "cd ios && bundle exec fastlane; cd ..",
     "generate:apk": "cd android; ./gradlew assembleRelease; cd ..; open ./android",
     "generate:types": "graphql-codegen",
     "ios": "yarn react-native run-ios --simulator='iPhone 12'",
