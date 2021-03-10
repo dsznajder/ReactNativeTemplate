@@ -40,6 +40,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-native/no-raw-text': ['error', { skip: ['Typography'] }],
     'react/no-unused-prop-types': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
 
     'import/no-unresolved': [
       'error',
@@ -90,17 +91,6 @@ module.exports = {
         ],
       },
     ],
-
-    // 'graphql/template-strings': [
-    //   'error',
-    //   {
-    //     env: 'apollo',
-    //     schemaJsonFilepath: path.resolve(
-    //       __dirname,
-    //       'src/types/graphql.schema.json',
-    //     ),
-    //   },
-    // ],
   },
   globals: {
     __DEV__: true,

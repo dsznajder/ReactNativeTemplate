@@ -2,7 +2,7 @@ import ejs from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
 
-const copyDir = async (source: string, dest: string) => {
+const copyDir = async (source: string, dest: string, options: any) => {
   await fs.mkdirp(dest);
 
   const files = await fs.readdir(source);
@@ -20,13 +20,11 @@ const copyDir = async (source: string, dest: string) => {
     const stats = await fs.stat(file);
 
     if (stats.isDirectory()) {
-      await copyDir(file, target);
-    } else if (!file.match(BINARIES)) {
-      const content = await fs.readFile(file, 'utf8');
-
-      await fs.writeFile(target, ejs.render(content, options));
+      await copyDir(file, target, options);
     } else {
       await fs.copyFile(file, target);
     }
   }
 };
+
+export default copyDir;

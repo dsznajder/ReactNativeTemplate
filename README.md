@@ -14,7 +14,8 @@ Heavily based on [react-native-builder-bob](https://github.com/callstack/react-n
 - Integrations:
   - [ ] GraphQL
   - [ ] Unimodules
+  - [ ] Fastlane
+- Modules:
   - [ ] react-native-screens
   - [ ] react-native-reanimated
-  - [ ] fastlane
 
