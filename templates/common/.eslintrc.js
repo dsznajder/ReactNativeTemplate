@@ -1,5 +1,3 @@
-// const path = require('path');
-
 module.exports = {
   env: {
     es6: true,
@@ -27,7 +25,7 @@ module.exports = {
     },
   },
 
-  plugins: ['simple-import-sort', 'graphql'],
+  plugins: ['simple-import-sort'],
   extends: ['satya164', 'plugin:react-native/all'],
 
   rules: {
@@ -90,17 +88,6 @@ module.exports = {
         ],
       },
     ],
-
-    // 'graphql/template-strings': [
-    //   'error',
-    //   {
-    //     env: 'apollo',
-    //     schemaJsonFilepath: path.resolve(
-    //       __dirname,
-    //       'src/types/graphql.schema.json',
-    //     ),
-    //   },
-    // ],
   },
   globals: {
     __DEV__: true,

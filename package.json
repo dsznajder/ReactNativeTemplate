@@ -1,79 +1,56 @@
 {
-  "name": "template-project",
+  "name": "create-react-native-project",
   "version": "0.0.1",
-  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "template",
+    "ios",
+    "android"
+  ],
+  "main": "lib/index.js",
+  "bin": {
+    "create-react-native-project": "bin/create-react-native-project"
+  },
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
-    "android": "yarn react-native run-android",
-    "clean:all": "yarn clean:watchman && yarn clean:builds && yarn clean:gradlew && yarn clean:cache && yarn clean:packages",
-    "clean:builds": "rm -rf ios/build android/build android/app/build",
-    "clean:cache": "rm -rf $TMPDIR/react-* $TMPDIR/haste-map-react-native-packager-* ~/.rncache",
-    "clean:gradlew": "cd android && ./gradlew clean && cd ..",
-    "clean:packages": "rm -rf ios/Pods && rm -rf node_modules && yarn install",
-    "clean:watchman": "watchman watch-del-all",
-    "coverage": "open coverage/lcov-report/index.html",
-    "fastlane:android": "yarn jetify; cd android && bundle update && bundle exec fastlane",
-    "fastlane:ios": "cd ios && bundle update && bundle exec fastlane",
-    "generate:apk": "cd android; ./gradlew assembleRelease; cd ..; open ./android",
-    "generate:types": "graphql-codegen",
-    "ios": "yarn react-native run-ios --simulator='iPhone 12'",
-    "lint": "eslint . --ext .js,.ts,.tsx",
-    "lint:watch": "yarn lint -w",
-    "postinstall": "patch-package && ./scripts/postinstall.sh",
-    "stacktrace": "npx metro-symbolicate android/app/build/generated/sourcemaps/react/release/index.android.bundle.map < stacktrace.txt",
-    "start": "react-native start",
-    "test": "jest --coverage --runInBand --detectOpenHandles --forceExit",
-    "test:unit": "jest -u --runInBand",
-    "test:watch": "jest --watch",
-    "typescript": "tsc --noEmit"
+    "prepare": "babel --extensions .ts,.tsx src --out-dir lib --ignore '**/__tests__/**' --source-maps --delete-dir-on-start"
   },
   "dependencies": {
-    "@apollo/client": "3.2.7",
-    "@react-native-community/masked-view": "0.1.10",
-    "@react-native-community/netinfo": "5.9.7",
-    "@react-navigation/native": "5.8.9",
-    "graphql": "15.4.0",
-    "react": "16.13.1",
-    "react-native": "0.63.3",
-    "react-native-config": "1.4.1",
-    "react-native-gesture-handler": "1.8.0",
-    "react-native-keyboard-manager": "4.0.13-17",
-    "react-native-reanimated": "2.0.0-alpha.9",
-    "react-native-redash": "15.11.1",
-    "react-native-safe-area-context": "3.1.9",
-    "react-native-screens": "2.15.0"
+    "chalk": "4.1.0",
+    "cross-spawn": "7.0.3",
+    "ejs": "3.1.6",
+    "fs-extra": "9.1.0",
+    "prompts": "2.4.0",
+    "yargs": "16.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.1",
-    "@babel/core": "7.12.3",
-    "@babel/runtime": "7.12.5",
-    "@graphql-codegen/cli": "1.19.2",
-    "@graphql-codegen/introspection": "1.18.0",
-    "@graphql-codegen/near-operation-file-preset": "1.17.12",
-    "@graphql-codegen/typescript": "1.17.11",
-    "@graphql-codegen/typescript-operations": "1.17.10",
-    "@types/jest": "26.0.15",
-    "@types/lodash": "4.14.165",
-    "@types/react": "16.9.56",
-    "@types/react-native": "0.63.35",
-    "@types/react-test-renderer": "16.9.3",
-    "babel-jest": "26.6.3",
-    "babel-minify": "0.5.1",
-    "babel-plugin-lodash": "3.3.4",
-    "babel-plugin-module-resolver": "4.0.0",
-    "eslint": "7.13.0",
-    "eslint-config-satya164": "3.1.8",
-    "eslint-plugin-graphql": "4.0.0",
-    "eslint-plugin-simple-import-sort": "6.0.0",
-    "husky": "4.3.0",
-    "jest": "26.6.3",
-    "lint-staged": "10.5.1",
-    "metro-react-native-babel-preset": "0.64.0",
-    "patch-package": "6.2.2",
-    "prettier": "2.1.2",
-    "react-native-flipper": "0.64.0",
-    "react-test-renderer": "16.13.1",
-    "typescript": "4.0.5",
-    "unfetch": "4.2.0"
+    "@babel/cli":"7.13.10",
+    "@babel/core": "7.13.10",
+    "@babel/preset-env": "7.13.10",
+    "@babel/preset-typescript": "7.13.0",
+    "@types/chalk": "2.2.0",
+    "@types/cross-spawn": "6.0.2",
+    "@types/ejs": "3.0.6",
+    "@types/fs-extra": "9.0.8",
+    "@types/prompts": "2.0.9",
+    "@types/yargs": "16.0.0",
+    "eslint": "7.21.0",
+    "eslint-config-satya164": "3.1.9",
+    "husky": "5.1.3",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "typescript": "4.2.3"
   },
   "prettier": {
     "bracketSpacing": true,
@@ -85,26 +62,6 @@
     "tabWidth": 2,
     "trailingComma": "all",
     "useTabs": false
-  },
-  "jest": {
-    "preset": "react-native",
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/src/assets/"
-    ],
-    "setupFiles": [],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
-    ],
-    "testPathIgnorePatterns": [
-      "__e2e__",
-      "node_modules"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn typescript"
-    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

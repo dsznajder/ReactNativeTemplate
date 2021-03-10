@@ -1,23 +1,11 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  retainLines: true,
-  plugins: [
-    'lodash',
-    'react-native-reanimated/plugin',
+  presets: [
     [
-      'module-resolver',
+      '@babel/preset-env',
       {
-        extensions: ['.json', '.ts', '.tsx'],
-        alias: {
-          '~': './src',
-          jest: './jest',
-        },
+        targets: { node: '10' },
       },
     ],
+    '@babel/preset-typescript',
   ],
-  env: {
-    production: {
-      plugins: ['transform-remove-console'],
-    },
-  },
 };

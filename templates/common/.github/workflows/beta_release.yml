@@ -1,0 +1,103 @@
+name: Build Beta releases
+
+on:
+  push:
+    branches:
+      - beta
+
+jobs:
+  android:
+    if: "!contains(github.event.head_commit.message, '[skip-android]')"
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '15'
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "14"
+    - name: Extend max user watchers
+      run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+    - name: "Use Bundler cache"
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - name: "Use Gradle cache"
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+    - name: Decrypt keystore and Google Credential
+      run: echo "*** NOT IMPLEMENTED ***"
+
+    - name: Prepare .env
+      run: echo "ENV=${{ secrets.ENV }}" >> .env
+
+    - name: Yarn & Bundler
+      run: |
+        yarn install
+        cd android
+        gem install bundler
+        bundle install
+    - name: Build & upload app via fastlane
+      run: |
+        yarn fastlane:android beta
+
+  ios:
+    if: "!contains(github.event.head_commit.message, '[skip-ios]')"
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+
+    - name: "Use Bundler cache"
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - name: "Use Pods cache"
+      uses: actions/cache@v2
+      with:
+        path: ios/Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+
+    - name: Decrypt private key
+      run: echo "*** NOT IMPLEMENTED ***"
+
+    - name: Yarn & Bundler
+      run: |
+        yarn install
+        cd ios
+        gem install bundler
+        bundle install
+    - name: Build & upload app via fastlane
+      run: |
+        yarn fastlane:ios beta
+      env:
+        APPLE_ISSUER_ID: ${{ secrets.APPLE_ISSUER_ID }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}

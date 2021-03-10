@@ -1,7 +1,20 @@
-# Config files for new React-Native Project
+# create-react-native-project
 
-# String names to change
+Project generator from basic template and preconfigured options.
+Heavily based on [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
 
-| String name | Description |
-|:--------:| ------- |
-|`CHANGE_ME_APP_ID` | Change it to your app id i.e. `com.facebook.katana` |
+## Usage:
+  ```sh
+  npx create-react-native-project ProjectName
+  ```
+
+### TODO:
+- Publish
+- Console prompt
+- Integrations:
+  - [ ] GraphQL
+  - [ ] Unimodules
+  - [ ] react-native-screens
+  - [ ] react-native-reanimated
+  - [ ] fastlane
+

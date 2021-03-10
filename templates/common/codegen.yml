@@ -15,7 +15,7 @@ generates:
     plugins:
       - introspection
     config:
-      minify: truex§
+      minify: true
 
   src/:
     hooks:
