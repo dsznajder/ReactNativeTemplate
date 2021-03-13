@@ -1,1 +1,1 @@
-package_name('CHANGE_ME_APP_ID')
+package_name('com.<%- project.package %>')

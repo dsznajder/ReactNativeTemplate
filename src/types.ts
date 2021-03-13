@@ -3,6 +3,7 @@ export enum Integrations {
   Unimodules = 'unimodules',
   Fastlane = 'fastlane',
   Redux = 'redux',
+  Sentry = 'sentry',
 }
 
 export enum Modules {
@@ -12,6 +13,8 @@ export enum Modules {
   GestureHandler = 'gestureHandler',
   Navigation = 'navigation',
   KeyboardManager = 'keyboardManager',
+  VectorIcons = 'vectorIcons',
+  Svg = 'svg',
 }
 
 export enum ArgName {
@@ -24,7 +27,11 @@ export type Answers = {
   modules: Array<Modules>;
 };
 
-export type Options = {
+export type Options<T = string> = {
+  project?: {
+    name: T;
+    package: T;
+  };
   integrations: { [key in Integrations]: boolean };
   modules: { [key in Modules]: boolean };
 };

@@ -8,7 +8,7 @@ import yargs from 'yargs';
 import prompts, { PromptObject } from './helpers/prompt';
 import summaryMessage from './helpers/summaryMessage';
 import getPackagesToInstall from './packages';
-import { Answers, ArgName, Integrations, Modules } from './types';
+import { Answers, ArgName, Integrations, Modules, Options } from './types';
 
 const COMMON_FILES = path.resolve(__dirname, '../templates/common');
 const GRAPHQL_FILES = path.resolve(__dirname, '../templates/graphql');
@@ -35,6 +35,8 @@ const args: Record<ArgName, yargs.Options> = {
       Modules.Navigation,
       Modules.Reanimated,
       Modules.Screens,
+      Modules.Svg,
+      Modules.VectorIcons,
     ],
   },
 };
@@ -59,6 +61,7 @@ async function create(argv: yargs.Arguments<any>) {
         { title: 'GraphQL', value: Integrations.GraphQL },
         { title: 'Unimodules', value: Integrations.Unimodules },
         // { title: 'Fastlane', value: Integrations.Fastlane },
+        // { title: 'Sentry', value: Integrations.Sentry },
       ],
     },
     modules: {
@@ -72,6 +75,8 @@ async function create(argv: yargs.Arguments<any>) {
           title: 'react-native-gesture-handler',
           value: Modules.GestureHandler,
         },
+        { title: 'react-native-svg', value: Modules.Svg },
+        { title: 'react-native-vector-icons', value: Modules.VectorIcons },
         // { title: 'react-navigation', value: Modules.Navigation },
         // { title: 'react-native-config', value: Modules.Config },
         // { title: 'react-native-keyboard-manager', value: Modules.KeyboardManager },
@@ -111,26 +116,30 @@ async function create(argv: yargs.Arguments<any>) {
     console.log(chalk.green('✅ Project initialised'));
   }
 
-  const options = {
-    project: {
-      name: basename,
-      package: basename.toLowerCase(),
+  /**
+   * Creating options for ejs parser i.e:
+   * { integrations: { redux: true }, modules: { screens: true } }
+   * TODO: Maybe it's overcomplicated. Get back to it after some time :)
+   */
+  const options = Object.entries({ integrations, modules }).reduce(
+    (options, [mainKey, values]) => {
+      options[mainKey] = (values as Array<Integrations | Modules>).reduce(
+        (acc, key) => {
+          acc[key] = true;
+          return acc;
+        },
+        {},
+      );
+
+      return options;
     },
-    integrations: {
-      fastlane: integrations.includes(Integrations.Fastlane),
-      graphql: integrations.includes(Integrations.GraphQL),
-      redux: integrations.includes(Integrations.Redux),
-      unimodules: integrations.includes(Integrations.Unimodules),
-    },
-    modules: {
-      config: modules.includes(Modules.Config),
-      gestureHandler: modules.includes(Modules.GestureHandler),
-      keyboardManager: modules.includes(Modules.KeyboardManager),
-      navigation: modules.includes(Modules.Navigation),
-      reanimated: modules.includes(Modules.Reanimated),
-      screens: modules.includes(Modules.Screens),
-    },
-  } as const;
+    {
+      project: {
+        name: basename,
+        package: basename.toLowerCase(),
+      },
+    } as Options,
+  );
 
   const copyDir = async (source: string, dest: string) => {
     await fs.mkdirp(dest);

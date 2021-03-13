@@ -33,8 +33,8 @@ npx create-react-native-project ProjectName
 | react-native-reanimated       | :white_check_mark: |
 | react-native-screens          | :white_check_mark: |
 | react-navigation              | :hourglass:        |
-| react-native-vector-icons     | :hourglass:        |
-| react-native-svg              | :hourglass:        |
+| react-native-vector-icons     | :white_check_mark: |
+| react-native-svg              | :white_check_mark: |
 
 # Default configuration
 

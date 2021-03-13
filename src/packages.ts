@@ -1,4 +1,4 @@
-import { Options } from './types';
+import { Integrations, Modules, Options } from './types';
 
 const PACKAGES = {
   integrations: {
@@ -16,12 +16,15 @@ const PACKAGES = {
     },
     unimodules: { main: ['react-native-unimodules'] },
     fastlane: { main: [] },
+    sentry: { main: ['@sentry/react-native'] },
     redux: {
       main: ['@reduxjs/toolkit', 'react-redux', 'redux'],
       dev: ['@types/react-redux', 'redux-flipper'],
     },
   },
   modules: {
+    vectorIcons: { main: ['react-native-vector-icons'] },
+    svg: { main: ['react-native-svg'] },
     config: { main: ['react-native-config'] },
     gestureHandler: { main: ['react-native-gesture-handler'] },
     keyboardManager: { main: ['react-native-keyboard-manager'] },
@@ -35,7 +38,12 @@ const PACKAGES = {
     reanimated: { main: ['react-native-reanimated', 'react-native-redash'] },
     screens: { main: ['react-native-screens'] },
   },
-} as const;
+} as {
+  integrations: {
+    [key in Integrations]: { main: Array<string>; dev?: Array<string> };
+  };
+  modules: { [key in Modules]: { main: Array<string>; dev?: Array<string> } };
+};
 
 const getPackagesToInstall = (options: Options) => {
   let packages = [];
