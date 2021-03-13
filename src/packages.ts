@@ -16,6 +16,10 @@ const PACKAGES = {
     },
     unimodules: { main: ['react-native-unimodules'] },
     fastlane: { main: [] },
+    redux: {
+      main: ['@reduxjs/toolkit', 'react-redux', 'redux'],
+      dev: ['@types/react-redux', 'redux-flipper'],
+    },
   },
   modules: {
     config: { main: ['react-native-config'] },

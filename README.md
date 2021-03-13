@@ -17,8 +17,9 @@ npx create-react-native-project ProjectName
 
 | Integrations | Status             |
 | ------------ | ------------------ |
-| Fastlane     | :construction:     |
-| GraphQL      | :construction:     |
+| Fastlane     | :hourglass:        |
+| GraphQL      | :white_check_mark: |
+| Redux        | :white_check_mark: |
 | Unimodules   | :white_check_mark: |
 
 | Modules                       | Status             |

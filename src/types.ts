@@ -2,6 +2,7 @@ export enum Integrations {
   GraphQL = 'graphql',
   Unimodules = 'unimodules',
   Fastlane = 'fastlane',
+  Redux = 'redux',
 }
 
 export enum Modules {

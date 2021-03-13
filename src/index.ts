@@ -1,17 +1,18 @@
 import chalk from 'chalk';
-import spawn from 'cross-spawn';
+import execa from 'execa';
 import ejs from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
 import yargs from 'yargs';
-import childProcess from 'child_process';
 
 import prompts, { PromptObject } from './helpers/prompt';
+import summaryMessage from './helpers/summaryMessage';
 import getPackagesToInstall from './packages';
 import { Answers, ArgName, Integrations, Modules } from './types';
 
 const COMMON_FILES = path.resolve(__dirname, '../templates/common');
 const GRAPHQL_FILES = path.resolve(__dirname, '../templates/graphql');
+const REDUX_FILES = path.resolve(__dirname, '../templates/redux');
 const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
 
 const args: Record<ArgName, yargs.Options> = {
@@ -19,20 +20,21 @@ const args: Record<ArgName, yargs.Options> = {
     description:
       'Which integrations/features would you like to have in your app?',
     choices: [
-      Integrations.GraphQL,
-      Integrations.Unimodules,
       Integrations.Fastlane,
+      Integrations.GraphQL,
+      Integrations.Redux,
+      Integrations.Unimodules,
     ],
   },
   modules: {
     description: 'Which packages would you like to have in your app?',
     choices: [
-      Modules.Screens,
-      Modules.Reanimated,
-      Modules.GestureHandler,
       Modules.Config,
-      Modules.Navigation,
+      Modules.GestureHandler,
       Modules.KeyboardManager,
+      Modules.Navigation,
+      Modules.Reanimated,
+      Modules.Screens,
     ],
   },
 };
@@ -53,8 +55,9 @@ async function create(argv: yargs.Arguments<any>) {
       message:
         'Which integrations/features would you like to have in your app?',
       choices: [
+        { title: 'Redux', value: Integrations.Redux },
+        { title: 'GraphQL', value: Integrations.GraphQL },
         { title: 'Unimodules', value: Integrations.Unimodules },
-        // { title: 'GraphQL', value: Integrations.GraphQL },
         // { title: 'Fastlane', value: Integrations.Fastlane },
       ],
     },
@@ -97,9 +100,13 @@ async function create(argv: yargs.Arguments<any>) {
       ),
     );
 
-    childProcess.execSync(
-      `npx react-native init ${basename} --template react-native-template-typescript`,
-    );
+    execa.sync('npx', [
+      'react-native',
+      'init',
+      basename,
+      '--template',
+      'react-native-template-typescript',
+    ]);
 
     console.log(chalk.green('✅ Project initialised'));
   }
@@ -110,16 +117,18 @@ async function create(argv: yargs.Arguments<any>) {
       package: basename.toLowerCase(),
     },
     integrations: {
+      fastlane: integrations.includes(Integrations.Fastlane),
       graphql: integrations.includes(Integrations.GraphQL),
-      unimodules: integrations.includes(Integrations.GraphQL),
-      fastlane: integrations.includes(Integrations.GraphQL),
+      redux: integrations.includes(Integrations.Redux),
+      unimodules: integrations.includes(Integrations.Unimodules),
     },
     modules: {
-      reanimated: modules.includes(Modules.Reanimated),
-      screens: modules.includes(Modules.Screens),
       config: modules.includes(Modules.Config),
       gestureHandler: modules.includes(Modules.GestureHandler),
+      keyboardManager: modules.includes(Modules.KeyboardManager),
       navigation: modules.includes(Modules.Navigation),
+      reanimated: modules.includes(Modules.Reanimated),
+      screens: modules.includes(Modules.Screens),
     },
   } as const;
 
@@ -156,11 +165,16 @@ async function create(argv: yargs.Arguments<any>) {
   await copyDir(COMMON_FILES, folder);
   console.log(chalk.green('✅ Copied common files'));
 
-  // if (options.integrations.graphql) {
-  //   console.log(chalk.blue('Coping GraphQL files'));
-  //   await copyDir(GRAPHQL_FILES, folder);
-  //   console.log(chalk.green('✅ Copied GraphQL files'));
-  // }
+  if (options.integrations.graphql) {
+    console.log(chalk.blue('Coping GraphQL files'));
+    await copyDir(GRAPHQL_FILES, folder);
+    console.log(chalk.green('✅ Copied GraphQL files'));
+  }
+  if (options.integrations.redux) {
+    console.log(chalk.blue('Coping Redux files'));
+    await copyDir(REDUX_FILES, folder);
+    console.log(chalk.green('✅ Copied Redux files'));
+  }
   // if (options.integrations.fastlane) {
   //   console.log(chalk.blue('Coping Fastlane files'));
   //   await copyDir(FASTLANE_FILES, folder);
@@ -170,28 +184,36 @@ async function create(argv: yargs.Arguments<any>) {
   /**
    * A bit hackish but for now I did not found anything better :shrug:
    */
-  childProcess.execSync(`chmod +x ./${basename}/scripts/*`);
+  execa.sync('chmod', ['+x', `${folder}/scripts/postinstall.sh`]);
   if (packages.length > 0) {
     console.log(chalk.blue(`Adding dependencies ${packages.join(', ')}`));
-    childProcess.execSync(
-      `yarn --cwd ${basename} add ${packages.join(' ')} --ignore-scripts`,
+    execa.sync(
+      'yarn',
+      ['--cwd', basename, 'add', '--ignore-scripts'].concat(packages),
     );
     console.log(chalk.green('✅ Dependencies added'));
   }
 
   if (devPackages.length > 0) {
     console.log(chalk.blue(`Adding dependencies ${devPackages.join(', ')}`));
-    childProcess.execSync(
-      `yarn --cwd ${basename} add ${devPackages.join(
-        ' ',
-      )} --dev --ignore-scripts`,
+    execa.sync(
+      'yarn',
+      ['--cwd', basename, 'add', '--dev', '--ignore-scripts'].concat(
+        devPackages,
+      ),
     );
     console.log(chalk.green('✅ Dev dependencies added'));
   }
 
   console.log(chalk.blue(`Installing dependencies & Pods...`));
-  childProcess.execSync(`yarn --cwd ${basename}`);
+  execa.sync('yarn', ['--cwd', basename, 'install']);
   console.log(chalk.green('✅ Dependencies & Pods installed'));
+
+  console.log(chalk.blue(`Linting...`));
+  execa.sync('yarn', ['--cwd', basename, 'lint']);
+  console.log(chalk.green('✅ Lint successful'));
+
+  console.log(summaryMessage);
 }
 
 yargs
