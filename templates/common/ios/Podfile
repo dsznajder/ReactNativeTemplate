@@ -9,6 +9,9 @@ require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
 <% } %>
 
 target '<%- project.name %>' do
+<% if (integrations.unimodules) { %>
+  use_unimodules!
+<% } %>
   config = use_native_modules!
 
   use_react_native!(

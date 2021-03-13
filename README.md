@@ -3,6 +3,8 @@
 Project generator from react-native init template and preconfigured options.
 Heavily inspired by [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
 
+![Example](./example.gif)
+
 # Usage:
 
 ```sh

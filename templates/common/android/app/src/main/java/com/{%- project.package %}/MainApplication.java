@@ -1,5 +1,9 @@
 package com.<%- project.package %>;
 
+<% if (integrations.unimodules) { %>
+import com.<%- project.package %>.generated.BasePackageList;
+<% } %>
+
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;

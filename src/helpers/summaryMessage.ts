@@ -7,7 +7,7 @@ const projectNotice = [
 ];
 
 const summaryMessage = (projectName: string) => `
-${chalk.cyanBright.bold(`'    Your project is ready!'`)}
+${chalk.cyanBright.bold(`    Your project is ready!`)}
 ${chalk.magenta(projectNotice.join('\n'))}
 `;
 
