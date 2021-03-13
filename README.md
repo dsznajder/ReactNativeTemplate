@@ -1,21 +1,31 @@
 # create-react-native-project
 
-Project generator from basic template and preconfigured options.
+Project generator from react-native init template and preconfigured options.
 Heavily based on [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
 
-## Usage:
-  ```sh
-  npx create-react-native-project ProjectName
-  ```
+# Usage:
 
-### TODO:
-- Publish
-- Console prompt
-- Integrations:
-  - [ ] GraphQL
-  - [ ] Unimodules
-  - [ ] Fastlane
-- Modules:
-  - [ ] react-native-screens
-  - [ ] react-native-reanimated
+```sh
+npx create-react-native-project ProjectName
+```
 
+# Features
+
+- Done - :white_check_mark:
+- Work in progress - :construction:
+- To be added - :hourglass:
+
+| Integrations | Status             |
+| ------------ | ------------------ |
+| Fastlane     | :construction:     |
+| GraphQL      | :construction:     |
+| Unimodules   | :white_check_mark: |
+
+| Modules                       | Status             |
+| ----------------------------- | ------------------ |
+| react-native-config           | :hourglass:        |
+| react-native-gesture-handler  | :white_check_mark: |
+| react-native-keyboard-manager | :hourglass:        |
+| react-native-reanimated       | :white_check_mark: |
+| react-native-screens          | :white_check_mark: |
+| react-navigation              | :hourglass:        |

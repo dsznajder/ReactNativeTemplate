@@ -5,8 +5,12 @@ export enum Integrations {
 }
 
 export enum Modules {
-  Screens = 'react-native-screens',
-  Reanimated = 'react-native-reanimated',
+  Screens = 'screens',
+  Reanimated = 'reanimated',
+  Config = 'config',
+  GestureHandler = 'gestureHandler',
+  Navigation = 'navigation',
+  KeyboardManager = 'keyboardManager',
 }
 
 export enum ArgName {
@@ -17,4 +21,9 @@ export enum ArgName {
 export type Answers = {
   integrations: Array<Integrations>;
   modules: Array<Modules>;
+};
+
+export type Options = {
+  integrations: { [key in Integrations]: boolean };
+  modules: { [key in Modules]: boolean };
 };

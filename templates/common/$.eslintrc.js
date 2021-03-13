@@ -1,7 +1,8 @@
-if <% if (integrations.graphql) { -%>
+if <% if (integrations.graphql) { %>
 const path = require('path');
 
-<% } -%>
+<% } %>
+
 module.exports = {
   env: {
     es6: true,
@@ -31,7 +32,7 @@ module.exports = {
 
   plugins: [
     'simple-import-sort',
-    <% if (integrations.graphql) { -%>
+    <% if (integrations.graphql) { %>
     'graphql',
     <% } %>
   ],
@@ -47,8 +48,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-native/no-raw-text': ['error', { skip: ['Typography'] }],
     'react/no-unused-prop-types': 'off',
-
-    <% if (integrations.graphql) { -%>
+    <% if (integrations.graphql) { %>
     'graphql/template-strings': [
       'error',
       {
@@ -60,7 +60,6 @@ module.exports = {
       },
     ],
     <% } %>
-
     'import/no-unresolved': [
       'error',
       {

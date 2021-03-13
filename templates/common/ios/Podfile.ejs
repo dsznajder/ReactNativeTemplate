@@ -1,6 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '10.3'
+platform :ios, '11.0'
+
+<% if (integrations.unimodules) { %>
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+<% } %>
 
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
@@ -11,7 +15,7 @@ def shared
   use_react_native!(path: config['reactNativePath'])
 end
 
-target 'FoodJob' do
+target '<%- project.name %>' do
   shared
 
   # Enables Flipper.

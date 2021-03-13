@@ -3,7 +3,9 @@ module.exports = {
   retainLines: true,
   plugins: [
     'lodash',
+    <% if (modules.reanimated) { %>
     'react-native-reanimated/plugin',
+    <% } %>
     [
       'module-resolver',
       {
