@@ -23,6 +23,7 @@ npx create-react-native-project ProjectName
 | GraphQL      | :white_check_mark: |
 | Redux        | :white_check_mark: |
 | Unimodules   | :white_check_mark: |
+| Sentry       | :hourglass:        |
 
 | Modules                       | Status             |
 | ----------------------------- | ------------------ |
@@ -32,3 +33,15 @@ npx create-react-native-project ProjectName
 | react-native-reanimated       | :white_check_mark: |
 | react-native-screens          | :white_check_mark: |
 | react-navigation              | :hourglass:        |
+| react-native-vector-icons     | :hourglass:        |
+| react-native-svg              | :hourglass:        |
+
+# Default configuration
+
+| Feature                                             | Status             |
+| --------------------------------------------------- | ------------------ |
+| [I18n](https://github.com/i18next/react-i18next)    | :white_check_mark: |
+| ESLint                                              | :white_check_mark: |
+| TypeScript                                          | :white_check_mark: |
+| [LintStaged](https://github.com/okonet/lint-staged) | :white_check_mark: |
+| [Husky](https://github.com/typicode/husky)          | :white_check_mark: |
