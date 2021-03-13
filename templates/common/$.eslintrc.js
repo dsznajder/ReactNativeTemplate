@@ -1,8 +1,3 @@
-if <% if (integrations.graphql) { %>
-const path = require('path');
-
-<% } %>
-
 module.exports = {
   env: {
     es6: true,
@@ -32,9 +27,9 @@ module.exports = {
 
   plugins: [
     'simple-import-sort',
-    <% if (integrations.graphql) { %>
+<% if (integrations.graphql) { %>
     'graphql',
-    <% } %>
+<% } %>
   ],
   extends: ['satya164', 'plugin:react-native/all'],
 
@@ -48,18 +43,18 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-native/no-raw-text': ['error', { skip: ['Typography'] }],
     'react/no-unused-prop-types': 'off',
-    <% if (integrations.graphql) { %>
-    'graphql/template-strings': [
-      'error',
-      {
-        env: 'apollo',
-        schemaJsonFilepath: path.resolve(
-          __dirname,
-          'src/types/graphql.schema.json',
-        ),
-      },
-    ],
-    <% } %>
+<% if (integrations.graphql) { %>
+    // 'graphql/template-strings': [
+    //   'error',
+    //   {
+    //     env: 'apollo',
+    //     schemaJsonFilepath: path.resolve(
+    //       __dirname,
+    //       'src/types/graphql.schema.json',
+    //     ),
+    //   },
+    // ],
+<% } %>
     'import/no-unresolved': [
       'error',
       {
@@ -69,7 +64,7 @@ module.exports = {
     ],
 
     'jest/expect-expect': [
-      'error',
+      'warn',
       { assertFunctionNames: ['expect', 'element'] },
     ],
 

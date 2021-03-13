@@ -1,11 +1,12 @@
 {
   "name": "create-react-native-project",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "React-Native project generator with preconfigured options.",
   "keywords": [
     "react-native",
     "template",
+    "project",
     "ios",
     "android"
   ],
@@ -32,7 +33,6 @@
     "ejs": "3.1.6",
     "execa": "5.0.0",
     "fs-extra": "9.1.0",
-    "graphql": "15.5.0",
     "prompts": "2.4.0",
     "yargs": "16.2.0"
   },

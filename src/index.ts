@@ -195,7 +195,9 @@ async function create(argv: yargs.Arguments<any>) {
   }
 
   if (devPackages.length > 0) {
-    console.log(chalk.blue(`Adding dependencies ${devPackages.join(', ')}`));
+    console.log(
+      chalk.blue(`Adding dev dependencies ${devPackages.join(', ')}`),
+    );
     execa.sync(
       'yarn',
       ['--cwd', basename, 'add', '--dev', '--ignore-scripts'].concat(
@@ -210,10 +212,10 @@ async function create(argv: yargs.Arguments<any>) {
   console.log(chalk.green('✅ Dependencies & Pods installed'));
 
   console.log(chalk.blue(`Linting...`));
-  execa.sync('yarn', ['--cwd', basename, 'lint']);
+  execa.sync('yarn', ['--cwd', basename, 'lint', '--fix']);
   console.log(chalk.green('✅ Lint successful'));
 
-  console.log(summaryMessage);
+  console.log(summaryMessage(basename));
 }
 
 yargs

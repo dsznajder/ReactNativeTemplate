@@ -1,7 +1,7 @@
 # create-react-native-project
 
 Project generator from react-native init template and preconfigured options.
-Heavily based on [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
+Heavily inspired by [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
 
 # Usage:
 

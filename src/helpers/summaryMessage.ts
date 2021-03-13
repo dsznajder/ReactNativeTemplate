@@ -1,14 +1,13 @@
 import chalk from 'chalk';
 
-const title = '                   Your project is ready!                 ';
 const projectNotice = [
-  '   You can start your project with predefined commands:   ',
-  '     - yarn ios                                           ',
-  '     - yarn android                                       ',
+  '    You can start your project with predefined commands:',
+  '      - yarn ios',
+  '      - yarn android',
 ];
 
-const summaryMessage = `
-${chalk.cyanBright.bold(title)}
+const summaryMessage = (projectName: string) => `
+${chalk.cyanBright.bold(`'    Your project is ready!'`)}
 ${chalk.magenta(projectNotice.join('\n'))}
 `;
 

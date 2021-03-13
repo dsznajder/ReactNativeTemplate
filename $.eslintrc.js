@@ -1,5 +1,3 @@
-// const path = require('path');
-
 module.exports = {
   env: {
     es6: true,

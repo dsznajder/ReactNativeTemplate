@@ -1,6 +1,6 @@
-/* eslint-disable import/named */
-<% if (modules.gestureHandler) %>
+<% if (modules.gestureHandler) { %>
 import 'react-native-gesture-handler';
+<% } %>
 
 import {
   AppRegistry,

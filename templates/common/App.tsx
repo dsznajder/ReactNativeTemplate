@@ -29,7 +29,6 @@ const App = () => {
     <% if (integrations.redux) { %>
       <Provider store={store}>
     <% } %>
-
       <Block style={styles.container}>
         <StatusBar
           barStyle="light-content"
