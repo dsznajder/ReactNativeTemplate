@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import spawn from 'cross-spawn';
 import ejs from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
@@ -9,6 +10,8 @@ import prompts, { PromptObject } from './helpers/prompt';
 import { Answers, ArgName, Integrations, Modules } from './types';
 
 const COMMON_FILES = path.resolve(__dirname, '../templates/common');
+const GRAPHQL_FILES = path.resolve(__dirname, '../templates/graphql');
+const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
 
 const args: Record<ArgName, yargs.Options> = {
   integrations: {
@@ -28,18 +31,16 @@ const args: Record<ArgName, yargs.Options> = {
 
 async function create(argv: yargs.Arguments<any>) {
   const folder = path.join(process.cwd(), argv.name);
-
-  // if (await fs.pathExists(folder)) {
-  //   console.log(
-  //     `A folder already exists at ${chalk.gray(
-  //       folder,
-  //     )}! Please specify another folder name or delete the existing one.`,
-  //   );
-
-  //   process.exit(1);
-  // }
-
   const basename = path.basename(argv.name);
+
+  if (!(await fs.pathExists(folder))) {
+    console.log(
+      chalk.gray.bgGreen(`Initialising react-native project ${folder}`),
+    );
+    const reactNativeInit = `npx react-native init ${basename}`
+
+    spawn.sync(reactNativeInit, ['--template', 'react-native-template-typescript'])
+  }
 
   const questions: Record<
     ArgName,
@@ -106,7 +107,7 @@ async function create(argv: yargs.Arguments<any>) {
     for (const f of files) {
       const target = path.join(
         dest,
-        ejs.render(f.replace(/^\$/, ''), options, {
+        ejs.render(f.replace(/^\$/, '').replace('.ejs', ''), options, {
           openDelimiter: '{',
           closeDelimiter: '}',
         }),
@@ -118,12 +119,17 @@ async function create(argv: yargs.Arguments<any>) {
       if (stats.isDirectory()) {
         await copyDir(file, target);
       } else {
-        await fs.copyFile(file, target);
+        const content = await fs.readFile(file, 'utf8');
+
+        await fs.writeFile(target, ejs.render(content, options));
       }
     }
   };
 
   await copyDir(COMMON_FILES, folder);
+
+  if (options.integrations.graphql) await copyDir(GRAPHQL_FILES, folder)
+  if (options.integrations.fastlane) await copyDir(FASTLANE_FILES, folder)
 }
 
 yargs
