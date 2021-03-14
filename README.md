@@ -1,9 +1,7 @@
 # create-react-native-project
 
-Project generator from react-native init template and preconfigured options.
-Heavily inspired by [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
-
-![Example](./example.gif)
+Project generator from react-native init template and preconfigured options. <br>
+Drop in replacement for `react-native init`
 
 # Usage:
 
@@ -11,26 +9,40 @@ Heavily inspired by [react-native-builder-bob](https://github.com/callstack/reac
 npx create-react-native-project ProjectName
 ```
 
+# Example
+
+![Example](./example.gif)
+
 # Features
 
-- Done - :white_check_mark:
-- Work in progress - :construction:
-- To be added - :hourglass:
+### Legend
 
-| Integrations | Status             |
-| ------------ | ------------------ |
-| Fastlane     | :hourglass:        |
-| GraphQL      | :white_check_mark: |
-| Redux        | :white_check_mark: |
-| Unimodules   | :white_check_mark: |
-| Sentry       | :hourglass:        |
+| Meaning                   | Status             |
+| ------------------------- | ------------------ |
+| Done                      | :white_check_mark: |
+| Work in progress          | :construction:     |
+| To be added               | :hourglass:        |
+| Idea (might not be added) | :thinking:         |
 
-| Modules                       | Status             |
-| ----------------------------- | ------------------ |
+<br>
+
+| Integrations      | Status             | Description                          |
+| ----------------- | ------------------ | ------------------------------------ |
+| Fastlane          | :hourglass:        |
+| GraphQL           | :white_check_mark: | @apollo/client + setup               |
+| Redux             | :white_check_mark: | react-redux + @redux/toolkit + setup |
+| Unimodules        | :white_check_mark: | react-native-unimodules + setup      |
+| Sentry            | :hourglass:        |
+| Detox             | :hourglass:        |
+| Firebase          | :thinking:         |
+| PushNotifications | :thinking:         | i.e. Notifee                         |
+
+| Modules                       | Status             | Description           |
+| ----------------------------- | ------------------ | --------------------- |
 | react-native-config           | :hourglass:        |
 | react-native-gesture-handler  | :white_check_mark: |
-| react-native-keyboard-manager | :hourglass:        |
-| react-native-reanimated       | :white_check_mark: |
+| react-native-keyboard-manager | :thinking:         |
+| react-native-reanimated       | :white_check_mark: | + react-native-redash |
 | react-native-screens          | :white_check_mark: |
 | react-navigation              | :hourglass:        |
 | react-native-vector-icons     | :white_check_mark: |
@@ -46,3 +58,7 @@ npx create-react-native-project ProjectName
 | [LintStaged](https://github.com/okonet/lint-staged)           | :white_check_mark: |
 | [ProGuard](./templates/common/android/app/proguard-rules.pro) | :white_check_mark: |
 | [TypeScript](./templates/common/tsconfig.json)                | :white_check_mark: |
+
+# Additionals
+
+Heavily inspired by :heart: [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
