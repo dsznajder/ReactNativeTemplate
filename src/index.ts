@@ -149,7 +149,7 @@ async function create(argv: yargs.Arguments<any>) {
     for (const f of files) {
       const target = path.join(
         dest,
-        ejs.render(f.replace(/^\$/, '').replace('.ejs', ''), options, {
+        ejs.render(f.replace(/^\$/, ''), options, {
           openDelimiter: '{',
           closeDelimiter: '}',
         }),

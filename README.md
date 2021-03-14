@@ -38,10 +38,11 @@ npx create-react-native-project ProjectName
 
 # Default configuration
 
-| Feature                                             | Status             |
-| --------------------------------------------------- | ------------------ |
-| [I18n](https://github.com/i18next/react-i18next)    | :white_check_mark: |
-| ESLint                                              | :white_check_mark: |
-| TypeScript                                          | :white_check_mark: |
-| [LintStaged](https://github.com/okonet/lint-staged) | :white_check_mark: |
-| [Husky](https://github.com/typicode/husky)          | :white_check_mark: |
+| Feature                                                       | Status             |
+| ------------------------------------------------------------- | ------------------ |
+| [ESLint](./templates/common/$.eslint.js)                      | :white_check_mark: |
+| [Husky](https://github.com/typicode/husky)                    | :white_check_mark: |
+| [I18n](https://github.com/i18next/react-i18next)              | :white_check_mark: |
+| [LintStaged](https://github.com/okonet/lint-staged)           | :white_check_mark: |
+| [ProGuard](./templates/common/android/app/proguard-rules.pro) | :white_check_mark: |
+| [TypeScript](./templates/common/tsconfig.json)                | :white_check_mark: |
