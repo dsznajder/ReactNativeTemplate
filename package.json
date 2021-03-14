@@ -1,8 +1,16 @@
 {
   "name": "create-react-native-project",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "React-Native project generator with preconfigured options.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsznajder/create-react-native-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dsznajder/create-react-native-project/issues"
+  },
+  "homepage": "https://github.com/dsznajder/create-react-native-project",
   "keywords": [
     "react-native",
     "template",
