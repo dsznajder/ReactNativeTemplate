@@ -30,7 +30,7 @@
 -dontwarn java.nio.file.*
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 -dontwarn okio.**
-<% if (integrations.unimodules) %>
+<% if (integrations.unimodules) { %>
 # react-native-unimodules
 -keep class expo.modules.permissions.** { *; }
 -keep class expo.modules.imagepicker.** { *; }
