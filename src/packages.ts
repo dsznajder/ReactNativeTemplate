@@ -1,5 +1,7 @@
 import { Integrations, Modules, Options } from './types';
 
+type PackagesType = { main: Array<string>; dev?: Array<string> };
+
 const PACKAGES = {
   integrations: {
     graphql: {
@@ -40,27 +42,31 @@ const PACKAGES = {
   },
 } as {
   integrations: {
-    [key in Integrations]: { main: Array<string>; dev?: Array<string> };
+    [key in Integrations]: PackagesType;
   };
-  modules: { [key in Modules]: { main: Array<string>; dev?: Array<string> } };
+  modules: { [key in Modules]: PackagesType };
 };
 
 const getPackagesToInstall = (options: Options) => {
-  let packages = [];
-  let devPackages = [];
+  let packages: Array<string> = [];
+  let devPackages: Array<string> = [];
 
-  const addPackages = ({ main, dev }) => {
+  const addPackages = ({ main, dev }: PackagesType) => {
     packages = packages.concat(main);
     devPackages = devPackages.concat(dev || []);
   };
 
-  Object.entries(options.integrations).forEach(([key, value]) => {
-    if (value) addPackages(PACKAGES.integrations[key]);
-  });
+  Object.entries(options.integrations).forEach(
+    ([key, value]: [Integrations, boolean]) => {
+      if (value) addPackages(PACKAGES.integrations[key]);
+    },
+  );
 
-  Object.entries(options.modules).forEach(([key, value]) => {
-    if (value) addPackages(PACKAGES.modules[key]);
-  });
+  Object.entries(options.modules).forEach(
+    ([key, value]: [Modules, boolean]) => {
+      if (value) addPackages(PACKAGES.modules[key]);
+    },
+  );
 
   return [packages, devPackages];
 };

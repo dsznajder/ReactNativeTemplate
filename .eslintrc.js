@@ -25,7 +25,7 @@ module.exports = {
     },
   },
 
-  plugins: ['simple-import-sort', 'graphql'],
+  plugins: ['simple-import-sort'],
   extends: ['satya164', 'plugin:react-native/all'],
 
   rules: {

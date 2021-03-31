@@ -1,6 +1,6 @@
 import chalk from 'chalk';
-import execa from 'execa';
 import ejs from 'ejs';
+import execa from 'execa';
 import fs from 'fs-extra';
 import path from 'path';
 import yargs from 'yargs';
@@ -13,7 +13,7 @@ import { Answers, ArgName, Integrations, Modules, Options } from './types';
 const COMMON_FILES = path.resolve(__dirname, '../templates/common');
 const GRAPHQL_FILES = path.resolve(__dirname, '../templates/graphql');
 const REDUX_FILES = path.resolve(__dirname, '../templates/redux');
-const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
+// const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
 
 const args: Record<ArgName, yargs.Options> = {
   integrations: {
@@ -122,13 +122,13 @@ async function create(argv: yargs.Arguments<any>) {
    * TODO: Maybe it's overcomplicated. Get back to it after some time :)
    */
   const options = Object.entries({ integrations, modules }).reduce(
-    (options, [mainKey, values]) => {
-      options[mainKey] = (values as Array<Integrations | Modules>).reduce(
+    (options, [mainKey, values]: [string, Array<Integrations | Modules>]) => {
+      options[mainKey as 'integrations' | 'modules'] = values.reduce(
         (acc, key) => {
           acc[key] = true;
           return acc;
         },
-        {},
+        {} as { [key in Integrations | Modules]: boolean },
       );
 
       return options;
@@ -149,7 +149,7 @@ async function create(argv: yargs.Arguments<any>) {
     for (const f of files) {
       const target = path.join(
         dest,
-        ejs.render(f.replace(/^\$/, ''), options, {
+        ejs.render(f.replace(/^\$/, '').replace('.ejs', ''), options, {
           openDelimiter: '{',
           closeDelimiter: '}',
         }),

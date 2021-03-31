@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yarn husky install;
 yarn jetify;
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
