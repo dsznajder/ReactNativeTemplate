@@ -220,9 +220,10 @@ async function create(argv: yargs.Arguments<any>) {
   execa.sync('yarn', ['--cwd', basename, 'install']);
   console.log(chalk.green('✅ Dependencies & Pods installed'));
 
-  console.log(chalk.blue(`Linting...`));
-  execa.sync('yarn', ['--cwd', basename, 'lint', '--fix']);
-  console.log(chalk.green('✅ Lint successful'));
+  // TODO: Check why eslint does not see packages
+  // console.log(chalk.blue(`Linting...`));
+  // execa.sync('yarn', ['--cwd', basename, 'lint', '--fix']);
+  // console.log(chalk.green('✅ Lint successful'));
 
   console.log(summaryMessage(basename));
 }
