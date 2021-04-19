@@ -1,6 +1,6 @@
 {
   "name": "create-react-native-project",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "license": "MIT",
   "description": "React-Native project generator with preconfigured options.",
   "repository": {
@@ -24,6 +24,7 @@
   },
   "files": [
     "lib",
+    "bin",
     "templates"
   ],
   "engines": {
