@@ -84,7 +84,7 @@ async function create(argv: yargs.Arguments<any>) {
     },
   };
 
-  const { integrations, modules } = {
+  const { integrations = [], modules = [] } = {
     ...argv,
     ...(await prompts(
       Object.entries(questions)
