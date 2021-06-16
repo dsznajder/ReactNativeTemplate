@@ -12,6 +12,11 @@ import GraphQLClient from '~/services/GraphQL';
 import { Provider } from 'react-redux';
 import store from '~/store/index';
 <% } %>
+
+<% if (modules['react-native']) { %>
+import { ReactNavigation } from '~/recipes/ReactNavigation.tsx'
+<% } %>
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
@@ -34,6 +39,11 @@ const App = () => {
           barStyle="light-content"
           backgroundColor={palette.common.black}
         />
+
+        <% if(modules['react-navigation']) { %>
+          <ReactNavigation />
+        <% } %>
+
         <Typography>{`<%- project.name %>`}</Typography>
       </Block>
     <% if (integrations.redux) { %>

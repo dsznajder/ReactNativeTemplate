@@ -77,7 +77,7 @@ async function create(argv: yargs.Arguments<any>) {
         },
         { title: 'react-native-svg', value: Modules.Svg },
         { title: 'react-native-vector-icons', value: Modules.VectorIcons },
-        // { title: 'react-navigation', value: Modules.Navigation },
+        { title: 'react-navigation', value: Modules.Navigation },
         // { title: 'react-native-config', value: Modules.Config },
         // { title: 'react-native-keyboard-manager', value: Modules.KeyboardManager },
       ],
