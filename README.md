@@ -59,6 +59,17 @@ npx create-react-native-project ProjectName
 | [ProGuard](./templates/common/android/app/proguard-rules.pro) | :white_check_mark: |
 | [TypeScript](./templates/common/tsconfig.json)                | :white_check_mark: |
 
+# Development
+
+To start working with the CLI locally you need to install:
+
+- [Cocoapods](https://cocoapods.org/)
+
+Then, to run the CLI you need to call:
+
+1. `yarn prepare`
+2. `./bin/create-react-native-project DummyProject`
+
 # Additionals
 
 Heavily inspired by :heart: [react-native-builder-bob](https://github.com/callstack/react-native-builder-bob)
