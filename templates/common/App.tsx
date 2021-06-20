@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 import store from '~/store/index';
 <% } %>
 
-<% if (modules['react-native']) { %>
+<% if (modules.navigation) { %>
 import { ReactNavigation } from '~/recipes/ReactNavigation.tsx'
 <% } %>
 
@@ -40,7 +40,7 @@ const App = () => {
           backgroundColor={palette.common.black}
         />
 
-        <% if(modules['react-navigation']) { %>
+        <% if(modules.navigation) { %>
           <ReactNavigation />
         <% } %>
 
