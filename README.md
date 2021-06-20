@@ -67,8 +67,9 @@ To start working with the CLI locally you need to install:
 
 Then, to run the CLI you need to call:
 
-1. `yarn prepare`
-2. `./bin/create-react-native-project DummyProject`
+1. `$ yarn install`
+1. `$ yarn prepare`
+1. `$ ./bin/create-react-native-project DummyProject`
 
 # Additionals
 
