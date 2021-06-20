@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git init;
+
 yarn husky install;
 yarn jetify;
 
