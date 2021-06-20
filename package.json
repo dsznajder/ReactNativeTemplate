@@ -35,6 +35,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
+    "dev": "yarn prepare && yarn build DevProject",
+    "build": "./bin/create-react-native-project",
     "prepare": "babel --extensions .ts,.tsx src --out-dir lib --ignore '**/__tests__/**' --source-maps --delete-dir-on-start",
     "lint": "eslint . --ext .js,.ts,.tsx",
     "bootstrap": "yarn install; husky install",

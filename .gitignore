@@ -54,6 +54,8 @@ secrets.xml
 report.xml
 test-report.html
 
+DevProject/
+
 # Crashlytics
 /ios/Pods/
 
