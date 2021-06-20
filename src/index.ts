@@ -15,6 +15,8 @@ const GRAPHQL_FILES = path.resolve(__dirname, '../templates/graphql');
 const REDUX_FILES = path.resolve(__dirname, '../templates/redux');
 // const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
 
+const NAVIGATION_FILES = path.resolve(__dirname, '../templates/navigation');
+
 const args: Record<ArgName, yargs.Options> = {
   integrations: {
     description:
@@ -170,25 +172,34 @@ async function create(argv: yargs.Arguments<any>) {
 
   const [packages, devPackages] = getPackagesToInstall(options);
 
-  console.log(chalk.blue('Coping common files'));
+  console.log(chalk.blue('Copying common files'));
   await copyDir(COMMON_FILES, folder);
   console.log(chalk.green('✅ Copied common files'));
 
   if (options.integrations.graphql) {
-    console.log(chalk.blue('Coping GraphQL files'));
+    console.log(chalk.blue('Copying GraphQL files'));
     await copyDir(GRAPHQL_FILES, folder);
     console.log(chalk.green('✅ Copied GraphQL files'));
   }
+
   if (options.integrations.redux) {
-    console.log(chalk.blue('Coping Redux files'));
+    console.log(chalk.blue('Copying Redux files'));
     await copyDir(REDUX_FILES, folder);
     console.log(chalk.green('✅ Copied Redux files'));
   }
   // if (options.integrations.fastlane) {
-  //   console.log(chalk.blue('Coping Fastlane files'));
+  //   console.log(chalk.blue('Copying Fastlane files'));
   //   await copyDir(FASTLANE_FILES, folder);
   //   console.log(chalk.green('✅ Copied Fastlane files'));
   // }
+
+  console.log('modules', options.modules);
+
+  if (options.modules.navigation) {
+    console.log(chalk.blue('Copying react-navigation files'));
+    await copyDir(NAVIGATION_FILES, folder);
+    console.log(chalk.green('✅ Copied react-navigation files'));
+  }
 
   /**
    * A bit hackish but for now I did not found anything better :shrug:
