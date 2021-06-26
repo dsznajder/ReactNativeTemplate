@@ -34,6 +34,8 @@ const PACKAGES = {
       main: [
         '@react-native-community/masked-view',
         '@react-navigation/native',
+        '@react-navigation/stack',
+        'react-native-screens',
         'react-native-safe-area-context',
       ],
     },
@@ -61,6 +63,10 @@ const getPackagesToInstall = (options: Options) => {
       if (value) addPackages(PACKAGES.integrations[key]);
     },
   );
+
+  if (options.modules.navigation) {
+    options.modules.gestureHandler = true;
+  }
 
   Object.entries(options.modules).forEach(
     ([key, value]: [Modules, boolean]) => {

@@ -10,7 +10,7 @@ import store from '~/store/index';
 <% } %>
 
 <% if (modules.navigation) { %>
-import { ReactNavigation } from '~/recipes/ReactNavigation.tsx'
+import Navigation from '~/navigation/index'
 <% } else { %>
 import Block from '~/components/Block';
 import Typography from '~/components/Typography';
@@ -37,7 +37,7 @@ const App = () => {
       <Provider store={store}>
     <% } %>
       <% if (modules.navigation) { %>
-        <ReactNavigation />
+        <Navigation />
       <% } else { %>
         <Block style={styles.container}>
           <StatusBar
