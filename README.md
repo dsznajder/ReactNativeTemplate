@@ -65,11 +65,14 @@ To start working with the CLI locally you need to install:
 
 - [Cocoapods](https://cocoapods.org/)
 
-Then, to run the CLI you need to call:
+For local iOS development, you need to run:
 
 1. `$ yarn install`
 1. `$ yarn prepare`
-1. `$ ./bin/create-react-native-project DummyProject`
+1. `$ ./bin/create-react-native-project DevProject`
+1. `$ cd DevProject`
+1. `$ yarn start`
+1. `$ yarn ios`
 
 # Additionals
 
