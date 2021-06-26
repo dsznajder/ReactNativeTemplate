@@ -86,6 +86,8 @@ async function create(argv: yargs.Arguments<any>) {
     },
   };
 
+  // TODO: Add options per module/integration to configure variants such as navigation stack/bottom
+
   const { integrations = [], modules = [] } = {
     ...argv,
     ...(await prompts(
@@ -192,8 +194,6 @@ async function create(argv: yargs.Arguments<any>) {
   //   await copyDir(FASTLANE_FILES, folder);
   //   console.log(chalk.green('✅ Copied Fastlane files'));
   // }
-
-  console.log('modules', options.modules);
 
   if (options.modules.navigation) {
     console.log(chalk.blue('Copying react-navigation files'));

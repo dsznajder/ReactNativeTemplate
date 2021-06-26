@@ -9,11 +9,17 @@
       "~/helpers/*": ["src/helpers/*"],
       "~/locales/*": ["src/locales/*"],
       "~/machines/*": ["src/machines/*"],
+      <% if (modules.navigation) { %>
+      "~/navigation/*": ["src/navigation/*"],  
+      <% } %>
       "~/queries/*": ["src/queries/*"],
       "~/scenes/*": ["src/scenes/*"],
       "~/services/*": ["src/services/*"],
       "~/store/*": ["src/store/*"],
       "~/styles/*": ["src/styles/*"],
+      <% if (modules.navigation) { %>
+      "~/screens/*": ["src/screens/*"],  
+      <% } %>
       "~/types/*": ["src/types/*"]
     },
     "allowJs": true,
