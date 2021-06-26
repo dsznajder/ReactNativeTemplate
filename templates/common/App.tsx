@@ -12,11 +12,11 @@ import store from '~/store/index';
 <% if (modules.navigation) { %>
 import Navigation from '~/navigation/index'
 <% } else { %>
+import { StatusBar, StyleSheet } from 'react-native';
+
 import Block from '~/components/Block';
 import Typography from '~/components/Typography';
 import palette from '~/styles/palette';
-
-import { StatusBar, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {

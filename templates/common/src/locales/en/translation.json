@@ -1,5 +1,15 @@
 {
   "common": {
     "ok": "Ok"
+  },
+  "screens": {
+    "home": {
+      "title": "Home Page",
+      "ctaText": "Go to Settings"
+    },
+    "settings": {
+      "title": "Settings Page",
+      "ctaText": "Return to Home"
+    }
   }
 }
