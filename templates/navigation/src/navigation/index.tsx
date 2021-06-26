@@ -30,7 +30,7 @@ function RootNavigator() {
   );
 }
 <% } else { %>
-// Configure bottom tab navigator
+// TODO: Configure bottom tab navigator
   
 const Stack = createStackNavigator<RootStackParamList>();
 
