@@ -38,7 +38,8 @@
     "lib",
     "e2e",
     "jest",
-    "**/__tests__/*"
+    "**/__tests__/*",
+    "DevProject"
   ],
   "compileOnSave": false
 }
