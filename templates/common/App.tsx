@@ -1,9 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet } from 'react-native';
 
-import Block from '~/components/Block';
-import Typography from '~/components/Typography';
-import palette from '~/styles/palette';
 <% if (integrations.graphql) { %>
 import { ApolloProvider } from '@apollo/client';
 import GraphQLClient from '~/services/GraphQL';
@@ -15,7 +11,12 @@ import store from '~/store/index';
 
 <% if (modules.navigation) { %>
 import { ReactNavigation } from '~/recipes/ReactNavigation.tsx'
-<% } %>
+<% } else { %>
+import Block from '~/components/Block';
+import Typography from '~/components/Typography';
+import palette from '~/styles/palette';
+
+import { StatusBar, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+<% } %>
 
 const App = () => {
   return (
@@ -34,18 +36,18 @@ const App = () => {
     <% if (integrations.redux) { %>
       <Provider store={store}>
     <% } %>
-      <Block style={styles.container}>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor={palette.common.black}
-        />
+      <% if (modules.navigation) { %>
+        <ReactNavigation />
+      <% } else { %>
+        <Block style={styles.container}>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor={palette.common.black}
+          />
 
-        <% if(modules.navigation) { %>
-          <ReactNavigation />
-        <% } %>
-
-        <Typography>{`<%- project.name %>`}</Typography>
-      </Block>
+          <Typography>{`<%- project.name %>`}</Typography>
+        </Block>
+      <% } %>
     <% if (integrations.redux) { %>
       </Provider>
     <% } %>
