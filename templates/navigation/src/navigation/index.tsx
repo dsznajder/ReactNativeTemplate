@@ -18,7 +18,7 @@ const screenOptions = {
   headerShown: false,
 };
 
-<% if (options.navigation.variant === "stack") { %>
+<% if (modules.navigation) { %>
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
