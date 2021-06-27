@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 import { Integrations, Modules, Options } from './types';
 
 type PackagesType = { main: Array<string>; dev?: Array<string> };
@@ -34,7 +36,6 @@ const PACKAGES = {
       main: [
         '@react-native-community/masked-view',
         '@react-navigation/native',
-        '@react-navigation/stack',
         'react-native-screens',
         'react-native-safe-area-context',
       ],
@@ -42,11 +43,26 @@ const PACKAGES = {
     reanimated: { main: ['react-native-reanimated', 'react-native-redash'] },
     screens: { main: ['react-native-screens'] },
   },
+  extraOptions: {
+    modules: {
+      navigation: {
+        variant: {
+          bottomBar: {
+            main: ['@react-navigation/bottom-tabs'],
+          },
+          stack: {
+            main: ['@react-navigation/stack'],
+          },
+        },
+      },
+    },
+  },
 } as {
   integrations: {
     [key in Integrations]: PackagesType;
   };
   modules: { [key in Modules]: PackagesType };
+  extraOptions: object;
 };
 
 const getPackagesToInstall = (options: Options) => {
@@ -64,14 +80,27 @@ const getPackagesToInstall = (options: Options) => {
     },
   );
 
-  if (options.modules.navigation) {
-    options.modules.gestureHandler = true;
-  }
-
   Object.entries(options.modules).forEach(
     ([key, value]: [Modules, boolean]) => {
       if (value) addPackages(PACKAGES.modules[key]);
     },
+  );
+
+  Object.entries(options.extraOptions).forEach(([optionKey, optionNames]) =>
+    Object.entries(optionNames).forEach(([optionName, optionValue]) =>
+      Object.entries(optionValue).forEach(([extraOptionKey, value]) => {
+        const packagesForExtraOption = get(PACKAGES.extraOptions, [
+          optionKey,
+          optionName,
+          extraOptionKey,
+          value,
+        ]);
+
+        if (packagesForExtraOption) {
+          addPackages(packagesForExtraOption);
+        }
+      }),
+    ),
   );
 
   return [packages, devPackages];

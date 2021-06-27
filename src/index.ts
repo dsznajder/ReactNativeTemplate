@@ -4,6 +4,7 @@ import execa from 'execa';
 import fs from 'fs-extra';
 import path from 'path';
 import yargs from 'yargs';
+import { set } from 'lodash';
 
 import prompts, { PromptObject } from './helpers/prompt';
 import summaryMessage from './helpers/summaryMessage';
@@ -86,7 +87,28 @@ async function create(argv: yargs.Arguments<any>) {
     },
   };
 
-  // TODO: Add options per module/integration to configure variants such as navigation stack/bottom
+  const extraOptionsQuestions = {
+    modules: {
+      [Modules.Navigation]: [
+        {
+          type: 'select',
+          name: 'variant',
+          message:
+            'Which starting navigation would you like to add to your app?',
+          choices: [
+            {
+              title: 'Simple Stack navigation',
+              value: 'stack',
+            },
+            {
+              title: 'Bottom Bar navigation',
+              value: 'bottomBar',
+            },
+          ],
+        },
+      ],
+    },
+  };
 
   const { integrations = [], modules = [] } = {
     ...argv,
@@ -101,6 +123,27 @@ async function create(argv: yargs.Arguments<any>) {
         .map(([, v]) => v),
     )),
   } as Answers;
+
+  const hasModuleSelected = (moduleName: string) =>
+    [...integrations, ...modules].includes(moduleName);
+
+  const flatQuestions = Object.entries(extraOptionsQuestions)
+    .map(([answerKey, questionsPerAnswer]) =>
+      Object.entries(questionsPerAnswer)
+        .filter(([moduleName]) => hasModuleSelected(moduleName))
+        .map(([moduleName, moduleQuestions]) =>
+          moduleQuestions.map(({ name, ...moduleQuestion }) => ({
+            ...moduleQuestion,
+            name: `${answerKey}.${moduleName}.${name}`,
+          })),
+        ),
+    )
+    .flat(2);
+
+  const extraOptions = Object.entries(await prompts(flatQuestions)).reduce(
+    (acc, [k, v]) => set(acc, k, v),
+    {},
+  );
 
   if (!(await fs.pathExists(folder))) {
     console.log(
@@ -125,7 +168,10 @@ async function create(argv: yargs.Arguments<any>) {
    * { integrations: { redux: true }, modules: { screens: true } }
    * TODO: Maybe it's overcomplicated. Get back to it after some time :)
    */
-  const options = Object.entries({ integrations, modules }).reduce(
+  const options = Object.entries({
+    integrations,
+    modules,
+  }).reduce(
     (options, [mainKey, values]: [string, Array<Integrations | Modules>]) => {
       options[mainKey as 'integrations' | 'modules'] = values.reduce(
         (acc, key) => {
@@ -142,8 +188,13 @@ async function create(argv: yargs.Arguments<any>) {
         name: basename,
         package: basename.toLowerCase(),
       },
+      extraOptions,
     } as Options,
   );
+
+  if (options.modules.navigation) {
+    options.modules.gestureHandler = true;
+  }
 
   const copyDir = async (source: string, dest: string) => {
     await fs.mkdirp(dest);
