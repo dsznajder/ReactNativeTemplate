@@ -1,16 +1,15 @@
 import * as React from 'react';
 
 import { StyleSheet } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
 
 import Button from '~/components/Button';
 import Block from '~/components/Block';
 import Typography from '~/components/Typography';
 import palette from '~/styles/palette';
-import { RootStackParamList } from '~/navigation/index';
 import { t } from '~/services/I18n';
+import { RootStackParams } from '~/navigation/types';
 
-type Props = StackScreenProps<RootStackParamList, 'Settings'>;
+type Props = RootStackParams<'Settings'>;
 
 const SettingsScreen = ({ navigation }: Props) => {
   return (
