@@ -2,9 +2,9 @@ import chalk from 'chalk';
 import ejs from 'ejs';
 import execa from 'execa';
 import fs from 'fs-extra';
+import { set } from 'lodash';
 import path from 'path';
 import yargs from 'yargs';
-import { set } from 'lodash';
 
 import prompts, { PromptObject } from './helpers/prompt';
 import summaryMessage from './helpers/summaryMessage';
