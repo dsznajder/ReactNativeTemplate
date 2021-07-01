@@ -1,8 +1,12 @@
 import { get } from 'lodash';
 
-import { Integrations, Modules, Options } from './types';
-
-type PackagesType = { main: Array<string>; dev?: Array<string> };
+import {
+  ExtraOptions,
+  Integrations,
+  Modules,
+  Options,
+  PackagesType,
+} from './types';
 
 const PACKAGES = {
   integrations: {
@@ -62,7 +66,7 @@ const PACKAGES = {
     [key in Integrations]: PackagesType;
   };
   modules: { [key in Modules]: PackagesType };
-  extraOptions: object;
+  extraOptions: ExtraOptions;
 };
 
 const getPackagesToInstall = (options: Options) => {

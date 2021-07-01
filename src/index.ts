@@ -124,21 +124,22 @@ async function create(argv: yargs.Arguments<any>) {
     )),
   } as Answers;
 
-  const hasModuleSelected = (moduleName: string) =>
+  const hasModuleSelected = (moduleName: Integrations | Modules) =>
     [...integrations, ...modules].includes(moduleName);
 
-  const flatQuestions = Object.entries(extraOptionsQuestions)
-    .map(([answerKey, questionsPerAnswer]) =>
+  const flatQuestions = Object.entries(extraOptionsQuestions).flatMap(
+    ([answerKey, questionsPerAnswer]) =>
       Object.entries(questionsPerAnswer)
-        .filter(([moduleName]) => hasModuleSelected(moduleName))
-        .map(([moduleName, moduleQuestions]) =>
-          moduleQuestions.map(({ name, ...moduleQuestion }) => ({
+        .filter(([moduleName]) =>
+          hasModuleSelected(moduleName as Integrations | Modules),
+        )
+        .flatMap(([moduleName, moduleQuestions]) =>
+          moduleQuestions.flatMap(({ name, ...moduleQuestion }) => ({
             ...moduleQuestion,
             name: `${answerKey}.${moduleName}.${name}`,
           })),
         ),
-    )
-    .flat(2);
+  ) as Array<PromptObject>;
 
   const extraOptions = Object.entries(await prompts(flatQuestions)).reduce(
     (acc, [k, v]) => set(acc, k, v),
