@@ -52,10 +52,13 @@ const PACKAGES = {
       navigation: {
         variant: {
           bottomBar: {
-            main: ['@react-navigation/bottom-tabs'],
+            main: ['@react-navigation/stack', '@react-navigation/bottom-tabs'],
           },
           stack: {
             main: ['@react-navigation/stack'],
+          },
+          nativeStack: {
+            main: ['@react-navigation/native-stack'],
           },
         },
       },
