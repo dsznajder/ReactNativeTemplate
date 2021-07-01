@@ -22,6 +22,34 @@ export enum ArgName {
   Modules = 'modules',
 }
 
+export type PackagesType = { main: Array<string>; dev?: Array<string> };
+
+enum ModuleNavigationOptions {
+  Stack = 'stack',
+  BottomBar = 'bottomBar',
+}
+
+type ModuleOptions = {
+  [Modules.Navigation]: {
+    variant: {
+      [key in ModuleNavigationOptions]: PackagesType;
+    };
+  };
+};
+
+type IntegrationOptions = {
+  [key in Integrations]: {
+    [key: string]: {
+      [key: string]: PackagesType;
+    };
+  };
+};
+
+export type ExtraOptions = Partial<{
+  modules: ModuleOptions;
+  integrations: IntegrationOptions;
+}>;
+
 export type Answers = {
   integrations: Array<Integrations>;
   modules: Array<Modules>;
@@ -34,5 +62,9 @@ export type Options<T = string> = {
   };
   integrations: { [key in Integrations]: boolean };
   modules: { [key in Modules]: boolean };
-  extraOptions: { [key in Modules]: object };
+  extraOptions: {
+    [key in Modules | Integrations]: {
+      [key: string]: string;
+    };
+  };
 };
