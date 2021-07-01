@@ -10,7 +10,7 @@ import store from '~/store/index';
 <% } %>
 
 <% if (modules.navigation) { %>
-import Navigation from '~/navigation/index'
+import Navigation from '~/navigation'
 <% } else { %>
 import { StatusBar, StyleSheet } from 'react-native';
 
