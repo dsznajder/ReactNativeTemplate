@@ -97,8 +97,12 @@ async function create(argv: yargs.Arguments<any>) {
             'Which starting navigation would you like to add to your app?',
           choices: [
             {
-              title: 'Simple Stack navigation',
+              title: 'Stack navigation',
               value: 'stack',
+            },
+            {
+              title: 'Native Stack navigation',
+              value: 'nativeStack',
             },
             {
               title: 'Bottom Bar navigation',

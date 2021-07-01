@@ -5,6 +5,10 @@ import { NavigationContainer } from '@react-navigation/native';
 <% if (extraOptions.modules.navigation.variant === "stack") { %>
 import { createStackNavigator } from '@react-navigation/stack';
 <% } %>
+<% if (extraOptions.modules.navigation.variant === "nativeStack") { %>
+import { enableScreens } from 'react-native-screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+<% } %>
 <% if (extraOptions.modules.navigation.variant === "bottomBar") { %>
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 <% } %>
@@ -15,21 +19,6 @@ import SettingsScreen from '~/screens/Settings';
 import palette from '~/styles/palette';
 import { RootStackParams } from '~/navigation/types';
 
-<% if (extraOptions.modules.navigation.variant === "stack") { %>
-const Stack = createStackNavigator<RootStackParams>();
-
-function RootNavigator() {
-  return (
-    <Stack.Navigator screenOptions={{
-      headerShown: false,
-    }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Settings" component={SettingsScreen} />
-    </Stack.Navigator>
-  );
-}
-<% } %>
-      
 <% if (extraOptions.modules.navigation.variant === "bottomBar") { %>
 const Tab = createBottomTabNavigator<RootStackParams>();
 
@@ -39,6 +28,25 @@ function RootNavigator() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
+  );
+}
+<% } else { %>
+<% if (extraOptions.modules.navigation.variant === "stack") { %>
+const Stack = createStackNavigator<RootStackParams>();
+<% } %>
+<% if (extraOptions.modules.navigation.variant === "nativeStack") { %>
+enableScreens();
+const Stack = createNativeStackNavigator<RootStackParams>();
+<% } %>
+
+function RootNavigator() {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false,
+    }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Settings" component={SettingsScreen} />
+    </Stack.Navigator>
   );
 }
 <% } %>
