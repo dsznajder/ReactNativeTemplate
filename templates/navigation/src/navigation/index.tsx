@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 <% } %>
 <% if (extraOptions.modules.navigation.variant === "nativeStack") { %>
 import { enableScreens } from 'react-native-screens';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 <% } %>
 <% if (extraOptions.modules.navigation.variant === "bottomBar") { %>
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

@@ -58,7 +58,7 @@ const PACKAGES = {
             main: ['@react-navigation/stack'],
           },
           nativeStack: {
-            main: ['@react-navigation/native-stack'],
+            main: [],
           },
         },
       },

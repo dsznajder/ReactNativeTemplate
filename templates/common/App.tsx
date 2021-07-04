@@ -20,10 +20,7 @@ import palette from '~/styles/palette';
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     backgroundColor: palette.primary.background,
-    flex: 1,
-    justifyContent: 'center',
   },
 });
 <% } %>
@@ -39,7 +36,7 @@ const App = () => {
       <% if (modules.navigation) { %>
         <Navigation />
       <% } else { %>
-        <Block style={styles.container}>
+        <Block flex={1} alignCenter justifyCenter style={styles.container}>
           <StatusBar
             barStyle="light-content"
             backgroundColor={palette.common.black}

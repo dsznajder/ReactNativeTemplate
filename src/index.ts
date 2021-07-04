@@ -199,6 +199,7 @@ async function create(argv: yargs.Arguments<any>) {
 
   if (options.modules.navigation) {
     options.modules.gestureHandler = true;
+    options.modules.reanimated = true;
   }
 
   const copyDir = async (source: string, dest: string) => {
