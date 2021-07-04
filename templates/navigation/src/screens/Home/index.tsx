@@ -13,7 +13,7 @@ type Props = RootStackParams<'Home'>;
 
 const HomeScreen = ({ navigation }: Props) => {
   return (
-    <Block style={styles.container}>
+    <Block flex={1} alignCenter justifyCenter style={styles.container}>
       <Typography>{t('screens.home.title')}</Typography>
 
       <Button
@@ -28,9 +28,6 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: palette.primary.background,
   },
 });
