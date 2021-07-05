@@ -37,14 +37,14 @@ npx create-react-native-project ProjectName
 | Firebase          | :thinking:         |
 | PushNotifications | :thinking:         | i.e. Notifee                         |
 
-| Modules                       | Status             | Description           |
-| ----------------------------- | ------------------ | --------------------- |
+| Modules                       | Status             | Description                 |
+| ----------------------------- | ------------------ | --------------------------- |
 | react-native-config           | :hourglass:        |
 | react-native-gesture-handler  | :white_check_mark: |
 | react-native-keyboard-manager | :thinking:         |
-| react-native-reanimated       | :white_check_mark: | + react-native-redash |
+| react-native-reanimated       | :white_check_mark: | + react-native-redash       |
 | react-native-screens          | :white_check_mark: |
-| react-navigation              | :hourglass:        |
+| react-navigation              | :white_check_mark: | native, nativestack, bottom |
 | react-native-vector-icons     | :white_check_mark: |
 | react-native-svg              | :white_check_mark: |
 
