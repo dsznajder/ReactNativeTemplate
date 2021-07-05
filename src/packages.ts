@@ -40,7 +40,6 @@ const PACKAGES = {
       main: [
         '@react-native-community/masked-view',
         '@react-navigation/native',
-        'react-native-screens',
         'react-native-safe-area-context',
       ],
     },

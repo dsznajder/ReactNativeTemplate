@@ -202,6 +202,10 @@ async function create(argv: yargs.Arguments<any>) {
     options.modules.reanimated = true;
   }
 
+  if (options.extraOptions.navigation.variant === 'nativeStack') {
+    options.modules.screens = true;
+  }
+
   const copyDir = async (source: string, dest: string) => {
     await fs.mkdirp(dest);
 
