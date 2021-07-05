@@ -200,9 +200,6 @@ async function create(argv: yargs.Arguments<any>) {
   if (options.modules.navigation) {
     options.modules.gestureHandler = true;
     options.modules.reanimated = true;
-  }
-
-  if (options.extraOptions?.modules?.navigation?.variant === 'nativeStack') {
     options.modules.screens = true;
   }
 
