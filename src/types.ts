@@ -63,8 +63,15 @@ export type Options<T = string> = {
   integrations: { [key in Integrations]: boolean };
   modules: { [key in Modules]: boolean };
   extraOptions: {
-    [key in Modules | Integrations]: {
-      [key: string]: string;
+    modules: {
+      [key in Modules]: {
+        [key: string]: string;
+      };
+    };
+    integrations: {
+      [key in Integrations]: {
+        [key: string]: string;
+      };
     };
   };
 };
