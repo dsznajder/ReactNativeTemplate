@@ -14,9 +14,9 @@ import { Answers, ArgName, Integrations, Modules, Options } from './types';
 const COMMON_FILES = path.resolve(__dirname, '../templates/common');
 const GRAPHQL_FILES = path.resolve(__dirname, '../templates/graphql');
 const REDUX_FILES = path.resolve(__dirname, '../templates/redux');
-// const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
-
 const NAVIGATION_FILES = path.resolve(__dirname, '../templates/navigation');
+
+// const FASTLANE_FILES = path.resolve(__dirname, '../templates/fastlane');
 
 const args: Record<ArgName, yargs.Options> = {
   integrations: {

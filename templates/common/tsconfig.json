@@ -27,9 +27,9 @@
       "~/styles/*": ["src/styles/*"],
       "~/styles": ["src/styles"],
       <% if (modules.navigation) { %>
-      "~/navigation/*": ["src/navigation/*"],  
+      "~/navigation/*": ["src/navigation/*"],
       "~/navigation": ["src/navigation"],
-      "~/screens/*": ["src/screens/*"],  
+      "~/screens/*": ["src/screens/*"],
       "~/screens": ["src/screens"],
       <% } %>
       "~/types/*": ["src/types/*"],

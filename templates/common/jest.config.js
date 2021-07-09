@@ -8,7 +8,7 @@ module.exports = {
     <% } %>
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?react-native|@react-navigation|@react-native-mapbox-gl|@react-native-community|react-native-flipper|redux-flipper|expo(nent)?|@expo(nent)?/.*|@unimodules/.*|unimodules|@invertase/react-native-apple-authentication|@versum/moment-api-helpers/types|@react-native-masked-view)',
+    'node_modules/(?!(jest-)?react-native|@react-navigation|@react-native-community|react-native-flipper|redux-flipper|expo(nent)?|@expo(nent)?/.*|@unimodules/.*|unimodules|@react-native-masked-view)',
   ],
   testPathIgnorePatterns: ['e2e', 'node_modules'],
   moduleNameMapper: {

@@ -13,9 +13,9 @@ module.exports = {
         },
       },
     ],
-<% if (modules.reanimated) { %>
+  <% if (modules.reanimated) { %>
     'react-native-reanimated/plugin',
-<% } %>
+  <% } %>
   ],
   env: {
     production: {
