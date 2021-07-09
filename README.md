@@ -37,20 +37,20 @@ npx create-react-native-project ProjectName
 | Firebase          | :thinking:         |
 | PushNotifications | :thinking:         | i.e. Notifee                         |
 
-| Modules                       | Status             | Description                 |
-| ----------------------------- | ------------------ | --------------------------- |
+| Modules                       | Status             | Description                  |
+| ----------------------------- | ------------------ | ---------------------------- |
 | react-native-config           | :hourglass:        |
 | react-native-gesture-handler  | :white_check_mark: |
 | react-native-keyboard-manager | :thinking:         |
-| react-native-reanimated       | :white_check_mark: | + react-native-redash       |
+| react-native-reanimated       | :white_check_mark: | + react-native-redash        |
 | react-native-screens          | :white_check_mark: |
-| react-navigation              | :white_check_mark: | native, nativestack, bottom |
+| react-navigation              | :white_check_mark: | native, native-stack, bottom |
 | react-native-vector-icons     | :white_check_mark: |
 | react-native-svg              | :white_check_mark: |
 
 # Default configuration
 
-| Feature                                                       | Status             |
+| Features                                                      | Status             |
 | ------------------------------------------------------------- | ------------------ |
 | [ESLint](./templates/common/$.eslint.js)                      | :white_check_mark: |
 | [Husky](https://github.com/typicode/husky)                    | :white_check_mark: |
@@ -68,8 +68,7 @@ To start working with the CLI locally you need to install:
 For local iOS development, you need to run:
 
 1. `$ yarn install`
-1. `$ yarn prepare`
-1. `$ ./bin/create-react-native-project DevProject`
+1. `$ yarn dev`
 1. `$ cd DevProject`
 1. `$ yarn start`
 1. `$ yarn ios`

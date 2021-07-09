@@ -285,9 +285,13 @@ async function create(argv: yargs.Arguments<any>) {
     console.log(chalk.green('✅ Dev dependencies added'));
   }
 
-  console.log(chalk.blue(`Installing dependencies & Pods...`));
+  console.log(chalk.blue(`Installing dependencies...`));
+  execa.sync('yarn', ['--cwd', basename, 'install', '--ignore-scripts']);
+  console.log(chalk.green('✅ Dependencies installed'));
+
+  console.log(chalk.blue(`Installing Pods...`));
   execa.sync('yarn', ['--cwd', basename, 'install']);
-  console.log(chalk.green('✅ Dependencies & Pods installed'));
+  console.log(chalk.green('✅ Pods installed'));
 
   // TODO: Check why eslint does not see packages
   // console.log(chalk.blue(`Linting...`));
